@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public float speed;
     public bool real;
-    
+    public PauseMenuScript PauseMenu;
     private Rigidbody2D rb;
     private Vector2 dir;
 
@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Movement();
-        if (Input.GetKeyDown(KeyCode.Space)) ToggleWorld();
+        if (Input.GetKeyDown(KeyCode.Space) && !PauseMenu.isPaused) ToggleWorld();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
