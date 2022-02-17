@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
 
     private void ToggleWorld()
     {
+        AudioManager.instance.PlayS("toggleWorld");
         if (real)
         {
             real = false;

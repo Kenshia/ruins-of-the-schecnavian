@@ -5,9 +5,9 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
-    public Music[] music;
+    public Music[] music, ambiance;
     public SFX[] sfx;
-    public AudioSource mSource, sSource;
+    public AudioSource mSource, sSource, aSource;
 
     public static AudioManager instance;
 
@@ -31,6 +31,11 @@ public class AudioManager : MonoBehaviour
             m.source = mSource;
         }
 
+        foreach (Music m in ambiance)
+        {
+            m.source = aSource;
+        }
+
         foreach (SFX s in sfx)
         {
             s.source = sSource;
@@ -43,7 +48,17 @@ public class AudioManager : MonoBehaviour
         sSource.volume = PlayerPrefs.GetFloat("masterVolume", 1f) * PlayerPrefs.GetFloat("sfxVolume", 1f);
     }
 
-    float currentBaseVolM, currentBaseVolS;
+    float currentBaseVolM, currentBaseVolS, currentBaseVolA;
+
+    public void PlayAmbiance(string name)
+    {
+        Music m = Array.Find(ambiance, ambiance => ambiance.name == name);
+        currentBaseVolA = m.volume;
+        m.source.loop = m.loop;
+        m.source.volume = currentBaseVolA * PlayerPrefs.GetFloat("masterVolume", 1f) * PlayerPrefs.GetFloat("musicVolume", 1f);
+        m.source.clip = m.clip;
+        m.source.Play();
+    }
 
     public void PlayM(string name)
     {
