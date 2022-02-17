@@ -21,6 +21,11 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) ToggleWorld();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Death")) Debug.Log("ded");
+    }
+
     private void ToggleWorld()
     {
         if (real)
