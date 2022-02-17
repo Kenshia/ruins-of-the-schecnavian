@@ -21,7 +21,7 @@ public class Switch : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
-            if (Physics2D.OverlapCircle(transform.position, 0.4f, mask))
+            if (Physics2D.OverlapCircle(transform.position, 0.8f, mask))
                 ToggleSwitch();
     }
 
