@@ -7,12 +7,16 @@ public class Player : MonoBehaviour
     public float speed;
     public bool real;
     public PauseMenuScript PauseMenu;
+    public GameObject realWorld;
+    public GameObject unrealWorld;
     private Rigidbody2D rb;
     private Vector2 dir;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        realWorld.SetActive(true);
+        unrealWorld.SetActive(false);
     }
 
     private void Update()
@@ -33,11 +37,15 @@ public class Player : MonoBehaviour
         {
             real = false;
             Events.unrealWorld.Invoke();
+            realWorld.SetActive(false);
+            unrealWorld.SetActive(true);
         }
         else
         {
             real = true;
             Events.realWorld.Invoke();
+            realWorld.SetActive(true);
+            unrealWorld.SetActive(false);
         }
     }
 
