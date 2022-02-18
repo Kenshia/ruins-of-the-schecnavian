@@ -18,10 +18,10 @@ public class LevelSelector : MonoBehaviour
 
     public void SelectLevel(int level)
     {
-        int index = level - 1;
+        int index = level - 1; //index for array
         levelText.text = "Level: " + levels[index].level.ToString();
         timeText.text = "Best Time: " + ((int)levels[index].timeSpent/60).ToString("00") + ":" + (levels[index].timeSpent%60).ToString("00");
-        select.input = index;
+        select.input = index + 2; //level1 = build index 2
     }
 
     public void SaveResult()
