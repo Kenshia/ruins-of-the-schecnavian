@@ -52,12 +52,12 @@ public class AudioManager : MonoBehaviour
 
     public void PlayAmbiance(string name)
     {
-        Music m = Array.Find(ambiance, ambiance => ambiance.name == name);
-        currentBaseVolA = m.volume;
-        m.source.loop = m.loop;
-        m.source.volume = currentBaseVolA * PlayerPrefs.GetFloat("masterVolume", 1f) * PlayerPrefs.GetFloat("musicVolume", 1f);
-        m.source.clip = m.clip;
-        m.source.Play();
+        Music a = Array.Find(ambiance, ambiance => ambiance.name == name);
+        currentBaseVolA = a.volume;
+        a.source.loop = a.loop;
+        a.source.volume = currentBaseVolA * PlayerPrefs.GetFloat("masterVolume", 1f) * PlayerPrefs.GetFloat("musicVolume", 1f);
+        a.source.clip = a.clip;
+        a.source.Play();
     }
 
     public void PlayM(string name)

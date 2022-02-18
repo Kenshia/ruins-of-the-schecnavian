@@ -20,6 +20,7 @@ public class FinishAndTime : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (PauseMenuScript.instance.isPaused) return;
         time += Time.deltaTime;
         timeText.text = ((int)time / 60).ToString("00") + ":" + (time%60).ToString("00");
     }

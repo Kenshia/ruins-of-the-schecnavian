@@ -6,14 +6,15 @@ public class Player : MonoBehaviour
 {
     public float speed;
     public bool real;
-    public PauseMenuScript PauseMenu;
     public GameObject realWorld;
     public GameObject unrealWorld;
     private Rigidbody2D rb;
     private Vector2 dir;
+    private float stepCd;
 
     private void Start()
     {
+        stepCd = 0f;
         rb = GetComponent<Rigidbody2D>();
         realWorld.SetActive(true);
         unrealWorld.SetActive(false);
@@ -21,8 +22,9 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenuScript.instance.isPaused) return;
         Movement();
-        if (Input.GetKeyDown(KeyCode.Space) && !PauseMenu.isPaused) ToggleWorld();
+        if (Input.GetKeyDown(KeyCode.Space)) ToggleWorld();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,6 +41,7 @@ public class Player : MonoBehaviour
             Events.unrealWorld.Invoke();
             realWorld.SetActive(false);
             unrealWorld.SetActive(true);
+            AudioManager.instance.PlayAmbiance("unreal");
         }
         else
         {
@@ -46,6 +49,7 @@ public class Player : MonoBehaviour
             Events.realWorld.Invoke();
             realWorld.SetActive(true);
             unrealWorld.SetActive(false);
+            AudioManager.instance.PlayAmbiance("real");
         }
     }
 
@@ -64,5 +68,16 @@ public class Player : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.D)) dir.x--;
         if (Input.GetKeyUp(KeyCode.A)) dir.x++;
         rb.velocity = speed * dir;
+
+        if(stepCd <= 0)
+        {
+            if (rb.velocity == Vector2.zero) return;
+            stepCd = 1f;
+            AudioManager.instance.PlayS("footstepStone");
+        }
+        else
+        {
+            stepCd -= Time.deltaTime;
+        }
     }
 }

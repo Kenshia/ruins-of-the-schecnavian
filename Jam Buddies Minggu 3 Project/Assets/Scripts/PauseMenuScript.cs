@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuScript : MonoBehaviour
 {
+    public static PauseMenuScript instance;
     public bool isPaused = false;
     public GameObject PauseMenu;
-    public AudioSource BGM;
+    public GameObject settingMenu;
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else Destroy(gameObject);
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -25,17 +32,14 @@ public class PauseMenuScript : MonoBehaviour
 
     public void Resume()
     {
+        settingMenu.SetActive(false);
         PauseMenu.SetActive(false);
-        BGM.UnPause();
-        Time.timeScale = 1f;
         isPaused = false;
     }
 
     public void Pause()
     {
         PauseMenu.SetActive(true);
-        BGM.Pause();
-        Time.timeScale = 0f;
         isPaused = true;
     }
 

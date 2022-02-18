@@ -49,7 +49,7 @@ MonoBehaviour:
   music:
   - name: mainMenu
     clip: {fileID: 8300000, guid: 8a403c7d76a00114eac8da12fea464e4, type: 3}
-    volume: 1
+    volume: 0.233
     loop: 1
     source: {fileID: 0}
   - name: gameOver
@@ -65,12 +65,12 @@ MonoBehaviour:
   ambiance:
   - name: real
     clip: {fileID: 8300000, guid: 099c4b54cb5aa8d43812044fca33764e, type: 3}
-    volume: 1
+    volume: 0.5
     loop: 1
     source: {fileID: 0}
   - name: unreal
     clip: {fileID: 8300000, guid: c25b04ffb4dc328488063b58ba2ab524, type: 3}
-    volume: 1
+    volume: 0.5
     loop: 1
     source: {fileID: 0}
   sfx:
