@@ -36,7 +36,6 @@ public class LevelSelector : MonoBehaviour
         if(levels[idx].timeSpent > time) //best time now
         {
             levels[idx].timeSpent = time;
-            levels[idx].abilityUsed = abilityUsed;
             SaveResult();
         }
     }
@@ -46,7 +45,6 @@ public class LevelSelector : MonoBehaviour
         int index = level - 1;
         levelText.text = "Level: " + levels[index].level.ToString();
         timeText.text = "Best Time: " + levels[index].timeSpent.ToString("0.00");
-        abilityText.text = "Ability Used:" +levels[index].abilityUsed.ToString();
         select.input = index;
     }
 
@@ -58,9 +56,7 @@ public class LevelSelector : MonoBehaviour
 
         for(int i=0; i<levels.Length; i++)
         {
-            data.level[i] = levels[i].level;
             data.timeSpent[i] = levels[i].timeSpent;
-            data.abilityUsed[i] = levels[i].abilityUsed;
         }
 
         bf.Serialize(file, data);
@@ -82,9 +78,7 @@ public class LevelSelector : MonoBehaviour
         file.Close();
         for(int i=0; i<levels.Length; i++)
         {
-            levels[i].level = data.level[i];
             levels[i].timeSpent = data.timeSpent[i];
-            levels[i].abilityUsed = data.abilityUsed[i];
         }
 
         Debug.Log("loaded");
@@ -95,14 +89,11 @@ public class LevelSelector : MonoBehaviour
     {
         public int level;
         public float timeSpent;
-        public int abilityUsed;
     }
 
     [System.Serializable]
     public class SaveData
     {
-        public int[] level = new int[25];
         public float[] timeSpent = new float[25];
-        public int[] abilityUsed = new int[25];
     }
 }
