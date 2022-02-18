@@ -12,7 +12,6 @@ public class LevelSelector : MonoBehaviour
     public LevelData[] levels;
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI timeText;
-    public TextMeshProUGUI abilityText;
 
     private void Awake()
     {
@@ -30,10 +29,10 @@ public class LevelSelector : MonoBehaviour
         LoadResult();
     }
 
-    public void SaveFinishLevel(int level, float time, int abilityUsed)
+    public void SaveFinishLevel(int level, float time)
     {
         int idx = level - 1;
-        if(levels[idx].timeSpent > time) //best time now
+        if(time < levels[idx].timeSpent || levels[idx].timeSpent == 0)
         {
             levels[idx].timeSpent = time;
             SaveResult();
@@ -50,38 +49,18 @@ public class LevelSelector : MonoBehaviour
 
     public void SaveResult()
     {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/SaveData.dat");
-        SaveData data = new SaveData();
-
         for(int i=0; i<levels.Length; i++)
         {
-            data.timeSpent[i] = levels[i].timeSpent;
+            PlayerPrefs.SetFloat("BestTime" + i.ToString(), levels[i].timeSpent);
         }
-
-        bf.Serialize(file, data);
-        file.Close();
-        Debug.Log("saved");
     }
 
     public void LoadResult()
     {
-        if (!File.Exists(Application.persistentDataPath + "/SaveData.dat"))
-        {
-            Debug.Log("no data");
-            return;
-        }
-
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Open(Application.persistentDataPath + "/SaveData.dat", FileMode.Open);
-        SaveData data = (SaveData)bf.Deserialize(file);
-        file.Close();
         for(int i=0; i<levels.Length; i++)
         {
-            levels[i].timeSpent = data.timeSpent[i];
+            levels[i].timeSpent = PlayerPrefs.GetFloat("BestTime" + i.ToString(), 0f);
         }
-
-        Debug.Log("loaded");
     }
 
     [System.Serializable]
@@ -89,11 +68,5 @@ public class LevelSelector : MonoBehaviour
     {
         public int level;
         public float timeSpent;
-    }
-
-    [System.Serializable]
-    public class SaveData
-    {
-        public float[] timeSpent = new float[25];
     }
 }
