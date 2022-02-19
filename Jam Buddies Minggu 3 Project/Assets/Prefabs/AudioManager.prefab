@@ -80,7 +80,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: toggleWorld
-    clip: {fileID: 8300000, guid: 510b5d1b464eda84496240c264763a85, type: 3}
+    clip: {fileID: 8300000, guid: 9428d7ebd4517e6489647accfa72465e, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
@@ -96,6 +96,41 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: nextLevel
     clip: {fileID: 8300000, guid: 32e53b3e04fc3a845a23d4cf4ffe009c, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: button
+    clip: {fileID: 8300000, guid: d720b55e542455e42929824e1b063178, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: crushed
+    clip: {fileID: 8300000, guid: 15a6d512bdb84ad438f19bde3b282b3b, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: drown
+    clip: {fileID: 8300000, guid: a1b9ecc8c3fc43e45a86505ea7640681, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: push1
+    clip: {fileID: 8300000, guid: c496fb5f8323779459bad9dd795dfe7f, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: push2
+    clip: {fileID: 8300000, guid: 644014bfe02841242bfe9e697c38b6a1, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: push3
+    clip: {fileID: 8300000, guid: 0a38f4a19f27c1f47b616f76b1970b5a, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: door
+    clip: {fileID: 8300000, guid: 6f5d10f5821fa89439b41bcd6c01579b, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
