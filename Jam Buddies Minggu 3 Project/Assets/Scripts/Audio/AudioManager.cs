@@ -44,8 +44,8 @@ public class AudioManager : MonoBehaviour
 
     public void SetVolume()
     {
-        mSource.volume = PlayerPrefs.GetFloat("masterVolume", 1f) * PlayerPrefs.GetFloat("musicVolume", 1f);
-        sSource.volume = PlayerPrefs.GetFloat("masterVolume", 1f) * PlayerPrefs.GetFloat("sfxVolume", 1f);
+        mSource.volume = currentBaseVolM * PlayerPrefs.GetFloat("masterVolume", 1f) * PlayerPrefs.GetFloat("musicVolume", 1f);
+        sSource.volume = currentBaseVolS * PlayerPrefs.GetFloat("masterVolume", 1f) * PlayerPrefs.GetFloat("sfxVolume", 1f);
     }
 
     float currentBaseVolM, currentBaseVolS, currentBaseVolA;

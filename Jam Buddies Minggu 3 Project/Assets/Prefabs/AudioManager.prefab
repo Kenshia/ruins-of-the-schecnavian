@@ -49,7 +49,7 @@ MonoBehaviour:
   music:
   - name: mainMenu
     clip: {fileID: 8300000, guid: 8a403c7d76a00114eac8da12fea464e4, type: 3}
-    volume: 0.233
+    volume: 0.156
     loop: 1
     source: {fileID: 0}
   - name: gameOver
@@ -59,18 +59,18 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: inGame
     clip: {fileID: 8300000, guid: 867d5b038efb30048b4f9b4dcc18d229, type: 3}
-    volume: 1
+    volume: 0.199
     loop: 1
     source: {fileID: 0}
   ambiance:
   - name: real
     clip: {fileID: 8300000, guid: 099c4b54cb5aa8d43812044fca33764e, type: 3}
-    volume: 0.5
+    volume: 0.428
     loop: 1
     source: {fileID: 0}
   - name: unreal
     clip: {fileID: 8300000, guid: c25b04ffb4dc328488063b58ba2ab524, type: 3}
-    volume: 0.5
+    volume: 0.436
     loop: 1
     source: {fileID: 0}
   sfx:
@@ -86,7 +86,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: footstepStone
     clip: {fileID: 8300000, guid: 5df4ddd0265174243a68ace6a8c7fd6c, type: 3}
-    volume: 1
+    volume: 0.83
     loop: 0
     source: {fileID: 0}
   - name: startLevel
@@ -116,21 +116,26 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: push1
     clip: {fileID: 8300000, guid: c496fb5f8323779459bad9dd795dfe7f, type: 3}
-    volume: 1
+    volume: 0.69
     loop: 0
     source: {fileID: 0}
   - name: push2
     clip: {fileID: 8300000, guid: 644014bfe02841242bfe9e697c38b6a1, type: 3}
-    volume: 1
+    volume: 0.703
     loop: 0
     source: {fileID: 0}
   - name: push3
     clip: {fileID: 8300000, guid: 0a38f4a19f27c1f47b616f76b1970b5a, type: 3}
-    volume: 1
+    volume: 0.69
     loop: 0
     source: {fileID: 0}
   - name: door
     clip: {fileID: 8300000, guid: 6f5d10f5821fa89439b41bcd6c01579b, type: 3}
+    volume: 0.767
+    loop: 0
+    source: {fileID: 0}
+  - name: key
+    clip: {fileID: 8300000, guid: 4f5f4a11a5e9e5642bb648956009a017, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}

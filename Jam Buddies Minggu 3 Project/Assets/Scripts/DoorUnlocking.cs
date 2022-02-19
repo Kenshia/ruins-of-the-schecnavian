@@ -17,6 +17,7 @@ public class DoorUnlocking : MonoBehaviour
     {
         if (KeyCounter.instance.keyCount >= keyNeeded)
         {
+            AudioManager.instance.PlayS("door");
             //ganti ke change sprite / whatever it is
             Destroy(gameObject);
         }

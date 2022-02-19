@@ -15,7 +15,6 @@ public class Events : MonoBehaviour
         if (realWorld == null) realWorld = new UnityEvent();
         if (unrealWorld == null) unrealWorld = new UnityEvent();
         if (key == null) key = new UnityEvent();
-        Debug.Log("awake");
     }
 
     private void Start()

@@ -1310,6 +1310,7 @@ GameObject:
   - component: {fileID: 3915101304464846743}
   - component: {fileID: 3915101304464846742}
   - component: {fileID: 3915101304464846741}
+  - component: {fileID: 5248203457489875653}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -1443,6 +1444,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 5248203457489875653}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &5248203457489875653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915101304464846739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d37d4b403510a49857d8986cf557d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3915101304560035057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,6 +1480,7 @@ GameObject:
   - component: {fileID: 3915101304560035061}
   - component: {fileID: 3915101304560035060}
   - component: {fileID: 3915101304560035059}
+  - component: {fileID: 4028134588879972795}
   m_Layer: 5
   m_Name: NextLevelButton
   m_TagString: Untagged
@@ -1576,6 +1602,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4028134588879972795}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4028134588879972795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915101304560035057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d37d4b403510a49857d8986cf557d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3915101304591238801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,6 +1772,7 @@ GameObject:
   - component: {fileID: 3915101304625150742}
   - component: {fileID: 3915101304625150741}
   - component: {fileID: 3915101304625150740}
+  - component: {fileID: 8453749606707051081}
   m_Layer: 5
   m_Name: ResumeButton
   m_TagString: Untagged
@@ -1843,6 +1894,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8453749606707051081}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8453749606707051081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915101304625150738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d37d4b403510a49857d8986cf557d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3915101304692797417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,6 +1930,7 @@ GameObject:
   - component: {fileID: 3915101304692797421}
   - component: {fileID: 3915101304692797420}
   - component: {fileID: 3915101304692797419}
+  - component: {fileID: 2956614880078024660}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -1987,6 +2063,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2956614880078024660}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2956614880078024660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915101304692797417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d37d4b403510a49857d8986cf557d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3915101304701561315
 GameObject:
   m_ObjectHideFlags: 0
@@ -2603,6 +2703,7 @@ GameObject:
   - component: {fileID: 3915101305237798657}
   - component: {fileID: 3915101305237798656}
   - component: {fileID: 3915101305237798671}
+  - component: {fileID: 7810558091163205897}
   m_Layer: 5
   m_Name: ReturnButton
   m_TagString: Untagged
@@ -2724,6 +2825,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7810558091163205897}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7810558091163205897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915101305237798669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d37d4b403510a49857d8986cf557d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3915101305315891461
 GameObject:
   m_ObjectHideFlags: 0
