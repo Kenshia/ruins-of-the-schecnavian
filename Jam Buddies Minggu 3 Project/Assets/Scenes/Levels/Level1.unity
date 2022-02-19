@@ -14949,6 +14949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas (Prefab From Wilson)
       objectReference: {fileID: 0}
+    - target: {fileID: 3915101303787659331, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+      propertyPath: PauseMenu
+      value: 
+      objectReference: {fileID: 1686649973}
     - target: {fileID: 3915101303787659335, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -15031,6 +15035,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3915101303787659335, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915101303940832988, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915101303940832988, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915101304198689394, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915101304198689394, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915101304198689394, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -15118,6 +15142,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17e9456d26481c46b921c5c7b02a376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1686649973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8199093373148849943, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+  m_PrefabInstance: {fileID: 1287736023}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1755357053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15177,6 +15206,10 @@ PrefabInstance:
       propertyPath: realWorld
       value: 
       objectReference: {fileID: 297608713}
+    - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
+      propertyPath: DeathScreen
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
       propertyPath: unrealWorld
       value: 

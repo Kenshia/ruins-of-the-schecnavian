@@ -389,6 +389,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1997711444}
     - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
+      propertyPath: DeathScreen
+      value: 
+      objectReference: {fileID: 557313951}
+    - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
       propertyPath: unrealWorld
       value: 
       objectReference: {fileID: 148034088}
@@ -10243,6 +10247,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &557313951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8670990473390576839, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+  m_PrefabInstance: {fileID: 557313946}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &565640301
 PrefabInstance:
   m_ObjectHideFlags: 0

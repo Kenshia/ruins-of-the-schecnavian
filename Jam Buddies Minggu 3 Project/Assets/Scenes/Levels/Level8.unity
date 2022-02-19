@@ -496,6 +496,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3915101305731428495, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
   m_PrefabInstance: {fileID: 166300790}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &166300795 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8670990473390576839, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+  m_PrefabInstance: {fileID: 166300790}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &169707192 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4559371086198544781, guid: ad5576847a29c2444b358d5252186cf8, type: 3}
@@ -28436,6 +28441,10 @@ PrefabInstance:
       propertyPath: realWorld
       value: 
       objectReference: {fileID: 239565022}
+    - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
+      propertyPath: DeathScreen
+      value: 
+      objectReference: {fileID: 166300795}
     - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
       propertyPath: unrealWorld
       value: 
