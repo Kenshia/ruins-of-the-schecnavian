@@ -28,7 +28,7 @@ public class Events : MonoBehaviour
 
     private void Unreal()
     {
-        currentWorld.text = "UNREAL";
+        currentWorld.text = "IMAGINARY";
     }
 
     private void Real()
