@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 dir;
     private float stepCd;
+    public Animator anim;
 
     private void Start()
     {
@@ -57,17 +58,21 @@ public class Player : MonoBehaviour
     {
         //to prevent unwanted movement
         if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W)) rb.velocity = Vector2.zero;
-
-        if (Input.GetKeyDown(KeyCode.W)) dir.y++;
-        if (Input.GetKeyDown(KeyCode.S)) dir.y--;
+        if (Input.GetKeyDown(KeyCode.W)) dir.y++;        
+        if (Input.GetKeyDown(KeyCode.S)) dir.y--;        
         if (Input.GetKeyDown(KeyCode.D)) dir.x++;
         if (Input.GetKeyDown(KeyCode.A)) dir.x--;
 
         if (Input.GetKeyUp(KeyCode.W)) dir.y--;
-        if (Input.GetKeyUp(KeyCode.S)) dir.y++;
-        if (Input.GetKeyUp(KeyCode.D)) dir.x--;
+        if (Input.GetKeyUp(KeyCode.S)) dir.y++;       
+        if (Input.GetKeyUp(KeyCode.D)) dir.x--;      
         if (Input.GetKeyUp(KeyCode.A)) dir.x++;
+
         rb.velocity = speed * dir;
+
+        anim.SetFloat("Horizontal", dir.x);
+        anim.SetFloat("Vertical", dir.y);
+        anim.SetFloat("Speed", dir.sqrMagnitude);
 
         if(stepCd <= 0)
         {
