@@ -15839,7 +15839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!1 &1887307900 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8670990473390576839, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6557665673573712142, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
   m_PrefabInstance: {fileID: 1887307895}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1979867739

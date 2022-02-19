@@ -1665,7 +1665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4593441774179837922, guid: c458a51da994e6647bcbe224b12f26ae, type: 3}
       propertyPath: level
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4593441774179837922, guid: c458a51da994e6647bcbe224b12f26ae, type: 3}
       propertyPath: timeText
@@ -5221,7 +5221,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1401571329 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8670990473390576839, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6557665673573712142, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
   m_PrefabInstance: {fileID: 1401571324}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1401798050

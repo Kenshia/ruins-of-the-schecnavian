@@ -15209,7 +15209,7 @@ PrefabInstance:
     - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
       propertyPath: DeathScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1783814536}
     - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
       propertyPath: unrealWorld
       value: 
@@ -15220,6 +15220,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
+--- !u!1 &1783814536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6557665673573712142, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+  m_PrefabInstance: {fileID: 1287736023}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1847263142
 GameObject:
   m_ObjectHideFlags: 0

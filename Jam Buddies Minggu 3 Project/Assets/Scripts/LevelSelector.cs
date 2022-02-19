@@ -21,7 +21,7 @@ public class LevelSelector : MonoBehaviour
         int index = level - 1; //index for array
         levelText.text = "Level: " + levels[index].level.ToString();
         timeText.text = "Best Time: " + ((int)levels[index].timeSpent/60).ToString("00") + ":" + (levels[index].timeSpent%60).ToString("00");
-        select.input = index + 2; //level1 = build index 2
+        select.input = index + 1; //level1 = build index 1
     }
 
     public void SaveResult()

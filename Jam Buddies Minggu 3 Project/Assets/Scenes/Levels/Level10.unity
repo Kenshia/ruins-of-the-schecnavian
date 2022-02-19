@@ -1086,6 +1086,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3915101304560035059, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915101304560035059, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1066814054}
+    - target: {fileID: 3915101304560035059, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LevelLoad
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915101304560035059, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelSelect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915101305409337472, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+      propertyPath: m_text
+      value: 'Main Menu
+
+'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
 --- !u!114 &72099797 stripped
@@ -1126,6 +1148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &72099801 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6557665673573712142, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+  m_PrefabInstance: {fileID: 72099796}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &83941196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51561,6 +51588,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4158860382082931140, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
   m_PrefabInstance: {fileID: 1065260321}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1066814053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3915101304560035057, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+  m_PrefabInstance: {fileID: 72099796}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1066814054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066814053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7ac7724b721504bbc7775998cb6b1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: -1
 --- !u!1001 &1070612610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53534,7 +53579,7 @@ PrefabInstance:
     - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
       propertyPath: DeathScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 72099801}
     - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
       propertyPath: unrealWorld
       value: 
@@ -58351,7 +58396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4593441774179837922, guid: c458a51da994e6647bcbe224b12f26ae, type: 3}
       propertyPath: level
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4593441774179837922, guid: c458a51da994e6647bcbe224b12f26ae, type: 3}
       propertyPath: timeText

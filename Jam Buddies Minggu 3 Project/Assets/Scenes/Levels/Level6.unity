@@ -9685,7 +9685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4593441774179837922, guid: c458a51da994e6647bcbe224b12f26ae, type: 3}
       propertyPath: level
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4593441774179837922, guid: c458a51da994e6647bcbe224b12f26ae, type: 3}
       propertyPath: timeText
@@ -10258,7 +10258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!1 &1182590895 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8670990473390576839, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6557665673573712142, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
   m_PrefabInstance: {fileID: 1182590890}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1188621265
