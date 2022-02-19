@@ -2419,6 +2419,7 @@ GameObject:
   - component: {fileID: 3915101305237798656}
   - component: {fileID: 3915101305237798671}
   - component: {fileID: 7810558091163205897}
+  - component: {fileID: 235778651652562852}
   m_Layer: 5
   m_Name: ReturnButton
   m_TagString: Untagged
@@ -2528,14 +2529,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3915101303787659352}
-        m_TargetAssemblyTypeName: FinishScreen, Assembly-CSharp
-        m_MethodName: LoadLevelSelector
-        m_Mode: 1
+      - m_Target: {fileID: 235778651652562852}
+        m_TargetAssemblyTypeName: LevelSelect, Assembly-CSharp
+        m_MethodName: LevelLoad
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2564,6 +2565,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d37d4b403510a49857d8986cf557d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &235778651652562852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915101305237798669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7ac7724b721504bbc7775998cb6b1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: -1
 --- !u!1 &3915101305315891461
 GameObject:
   m_ObjectHideFlags: 0
@@ -4151,6 +4165,7 @@ GameObject:
   - component: {fileID: 5602617564494032849}
   - component: {fileID: 8718469967829293124}
   - component: {fileID: 511703930656255574}
+  - component: {fileID: 3172201596627159147}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -4260,10 +4275,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3915101303787659352}
-        m_TargetAssemblyTypeName: FinishScreen, Assembly-CSharp
-        m_MethodName: LoadLevelSelector
-        m_Mode: 1
+      - m_Target: {fileID: 3172201596627159147}
+        m_TargetAssemblyTypeName: LevelSelect, Assembly-CSharp
+        m_MethodName: LevelLoad
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4272,6 +4287,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3172201596627159147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637059524220359222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7ac7724b721504bbc7775998cb6b1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: -1
 --- !u!1 &7669957580900224327
 GameObject:
   m_ObjectHideFlags: 0
