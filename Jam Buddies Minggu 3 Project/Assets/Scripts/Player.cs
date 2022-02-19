@@ -31,23 +31,23 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Death")) Debug.Log("ded");
-
-        string objectName = collision.gameObject.name;
-
-        if (objectName.Equals("Stone"))
+        if (collision.CompareTag("Death"))
         {
-            Debug.Log("ded by stone");
-            DeathScreen.SetActive(true);
-            AudioManager.instance.PlayS("crushed");
-        }
-        else
-        {
-            Debug.Log("ded by water");
-            DeathScreen.SetActive(true);
-            AudioManager.instance.PlayS("drown");
-        }
+            string objectName = collision.gameObject.name;
 
+            if (objectName.Equals("WaterDeathCheck"))
+            {
+                Time.timeScale = 0f;
+                DeathScreen.SetActive(true);
+                AudioManager.instance.PlayS("drown");
+            }
+            else
+            {
+                Time.timeScale = 0f;
+                DeathScreen.SetActive(true);
+                AudioManager.instance.PlayS("crushed");
+            }
+        }
     }
 
     private void ToggleWorld()
