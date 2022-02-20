@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), transform.position.z);
         stepCd = 0f;
         rb = GetComponent<Rigidbody2D>();
         realWorld.SetActive(true);
@@ -24,8 +25,10 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (PauseMenuScript.instance.isPaused) return;
-        Movement();
+        if (PauseMenuScript.instance.isPaused || Time.timeScale == 0f) return;
+        NewMovement();
+        Anim();
+        StepSound();
         if (Input.GetKeyDown(KeyCode.Space)) ToggleWorld();
     }
 
@@ -68,6 +71,56 @@ public class Player : MonoBehaviour
             realWorld.SetActive(true);
             unrealWorld.SetActive(false);
             AudioManager.instance.PlayAmbiance("real");
+        }
+    }
+
+    private void NewMovement()
+    {
+        dir = Vector2.zero;
+        if (Input.GetKeyDown(KeyCode.W)) dir.y = 1;
+        else if (Input.GetKeyDown(KeyCode.S)) dir.y = -1;
+        else if (Input.GetKeyDown(KeyCode.A)) dir.x = -1;
+        else if (Input.GetKeyDown(KeyCode.D)) dir.x = 1;
+        if (dir == Vector2.zero) return;
+
+        bool canMove = false;
+        Collider2D[] collision = Physics2D.OverlapCircleAll((Vector2)transform.position + dir, 0.2f);
+        if (collision.Length == 0)
+        {
+            transform.position += (Vector3)dir;
+            return;
+        }
+        foreach (Collider2D collider in collision)
+        {
+            if (collider.CompareTag("MoveableObject"))
+            {
+                canMove = collider.GetComponent<ObjectMovement>().CheckMovement(dir);
+                if (canMove)
+                {
+                    transform.position += (Vector3)dir;
+                }
+            }
+        }
+    }
+
+    private void Anim()
+    {
+        anim.SetFloat("Horizontal", dir.x);
+        anim.SetFloat("Vertical", dir.y);
+        anim.SetFloat("Speed", dir.sqrMagnitude);
+    }
+
+    private void StepSound()
+    {
+        if (stepCd <= 0)
+        {
+            if (rb.velocity == Vector2.zero) return;
+            stepCd = 1f;
+            AudioManager.instance.PlayS("footstepStone");
+        }
+        else
+        {
+            stepCd -= Time.deltaTime;
         }
     }
 
