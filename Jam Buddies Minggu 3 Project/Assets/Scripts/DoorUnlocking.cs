@@ -10,16 +10,18 @@ public class DoorUnlocking : MonoBehaviour
     private void Start()
     {
         text.text = keyNeeded.ToString();
-        Events.key.AddListener(CheckKey);
     }
 
-    private void CheckKey()
+    public bool CheckKey()
     {
         if (KeyCounter.instance.keyCount >= keyNeeded)
         {
+            KeyCounter.instance.keyCount -= keyNeeded;
             AudioManager.instance.PlayS("door");
             //ganti ke change sprite / whatever it is
-            Destroy(gameObject);
+            Destroy(gameObject, 0.1f);
+            return true;
         }
+        return false;
     }
 }

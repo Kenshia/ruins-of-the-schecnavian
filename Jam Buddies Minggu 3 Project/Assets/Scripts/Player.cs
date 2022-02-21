@@ -105,6 +105,11 @@ public class Player : MonoBehaviour
             {
                 transform.position += (Vector3)dir;
             }
+            else if (collider.CompareTag("Door"))
+            {
+                if (collider.GetComponent<DoorUnlocking>().CheckKey())
+                    transform.position += (Vector3)dir;
+            }
         }
     }
 
