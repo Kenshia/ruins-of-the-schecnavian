@@ -8,11 +8,11 @@ public class Player : MonoBehaviour
     public bool real;
     public GameObject realWorld;
     public GameObject unrealWorld;
+    public Animator anim;
+    public GameObject DeathScreen;
     private Rigidbody2D rb;
     private Vector2 dir;
     private float stepCd;
-    public Animator anim;
-    public GameObject DeathScreen;
 
     private void Start()
     {
@@ -98,7 +98,12 @@ public class Player : MonoBehaviour
                 if (canMove)
                 {
                     transform.position += (Vector3)dir;
+                    PushSound();
                 }
+            }
+            else if (collider.CompareTag("Objective"))
+            {
+                transform.position += (Vector3)dir;
             }
         }
     }
@@ -121,6 +126,25 @@ public class Player : MonoBehaviour
         else
         {
             stepCd -= Time.deltaTime;
+        }
+    }
+
+    private void PushSound()
+    {
+        switch (Random.Range(0, 4))
+        {
+            case 1:
+                AudioManager.instance.PlayS("push1");
+                break;
+            case 2:
+                AudioManager.instance.PlayS("push2");
+                break;
+            case 3:
+                AudioManager.instance.PlayS("push3");
+                break;
+            default:
+                AudioManager.instance.PlayS("push1");
+                break;
         }
     }
 

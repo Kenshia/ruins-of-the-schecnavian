@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ObjectMovement : MonoBehaviour
 {
+    [HideInInspector] public List<Vector2> moveHistory;
+    private int count;
     private void Awake()
     {
         transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), transform.position.z);
@@ -15,6 +17,7 @@ public class ObjectMovement : MonoBehaviour
         Collider2D[] collision = Physics2D.OverlapCircleAll((Vector2)transform.position + dir, 0.2f);
         if (collision.Length == 0)
         {
+            SaveMovement();
             transform.position += (Vector3)dir;
             return true; ;
         }
@@ -25,11 +28,29 @@ public class ObjectMovement : MonoBehaviour
                 canMove = collider.GetComponent<ObjectMovement>().CheckMovement(dir);
                 if (canMove)
                 {
+                    SaveMovement();
                     transform.position += (Vector3)dir;
                     return true;
                 }
             }
         }
         return false;
+    }
+    private void SaveMovement()
+    {
+        moveHistory.Add(transform.position);
+        count++;
+    }
+    public void DeleteMoveHistory()
+    {
+        moveHistory.Clear();
+        count = 0;
+    }
+    public Vector2 RefundMovement()
+    {
+        if (count == 0) return transform.position;
+        count--;
+        Vector2 pos = moveHistory[count];
+        return pos;
     }
 }

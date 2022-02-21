@@ -5,11 +5,10 @@ using UnityEngine;
 public class StoneReal : MonoBehaviour
 {
     private Vector2 pos;
-    private float soundCd;
+    public ObjectMovement objectMovementScript;
 
     private void Start()
     {
-        soundCd = 1f;
         pos = transform.position;
         Events.realWorld.AddListener(OnRealEvent);
         Events.unrealWorld.AddListener(OnUnrealEvent);
@@ -18,35 +17,41 @@ public class StoneReal : MonoBehaviour
     private void OnRealEvent()
     {
         transform.position = pos;
+        CheckOverlap(false);
     }
 
+    public void CheckOverlap(bool calledFromOtherObject)
+    {
+        /*
+         * ketika tp, dia cek apakah tempatnya ada obstacle lain
+         * kalau ada air atau apapun maka dia tp balik
+         * kalau ada batu lain, maka suruh batu itu balik ke tempat sebelomnya
+         */
+        if (calledFromOtherObject)
+        {
+            transform.position = objectMovementScript.RefundMovement();
+            pos = transform.position;
+        }
+        Collider2D[] collision = Physics2D.OverlapCircleAll((Vector2)transform.position, 0.2f, 128);
+        foreach (Collider2D collider in collision)
+        {
+            if (collider.gameObject == gameObject) continue;
+            else if (collider.CompareTag("Obstacle")) //air
+            {
+                transform.position = objectMovementScript.RefundMovement();
+                pos = transform.position;
+            }
+            else if (collider.CompareTag("MoveableObject"))
+            {
+                if (collider.name.Substring(0, 9).Equals("StoneReal"))
+                    collider.gameObject.GetComponent<StoneReal>().CheckOverlap(true);
+                else
+                    collider.gameObject.GetComponent<StoneUnreal>().CheckOverlap(true);
+            }
+        }
+    }
     private void OnUnrealEvent()
     {
         pos = transform.position;
-    }
-    private void FixedUpdate()
-    {
-        soundCd -= Time.deltaTime;
-    }
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Player") && soundCd <= 0)
-        {
-            soundCd = 1f;
-            switch (Random.Range(0, 4))
-            {
-                case 1:
-                    AudioManager.instance.PlayS("push1");
-                    break;
-                case 2:
-                    AudioManager.instance.PlayS("push2");
-                    break;
-                case 3:
-                    AudioManager.instance.PlayS("push3");
-                    break;
-                default:
-                    break;
-            }
-        }
     }
 }
