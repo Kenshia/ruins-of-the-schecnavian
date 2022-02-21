@@ -47,10 +47,11 @@ public class StoneUnreal : MonoBehaviour
     private void OnRealEvent()
     {
         pos = transform.position;
+        objectMovementScript.CheckCrushed();
     }
     private void OnUnrealEvent()
     {
         transform.position = pos;
-        CheckOverlap(false);
+        //CheckOverlap(false);
     }
 }

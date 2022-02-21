@@ -10,7 +10,33 @@ public class ObjectMovement : MonoBehaviour
     {
         transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), transform.position.z);
     }
+    public void CheckCrushed()
+    {
+        StartCoroutine(CoroutineCheckCrushed());
+    }
+    public IEnumerator CoroutineCheckCrushed()
+    {
+        yield return new WaitForSeconds(0.02f);
+        /*
+         * if crushed, delete crushed, multiply current to all 4 sides except if the place has objective, and obstacle
+         */
+        Collider2D[] collision = Physics2D.OverlapCircleAll(transform.position, 0.2f);
+        foreach (Collider2D collider in collision)
+        {
+            if (collider.gameObject == this.gameObject || collider.CompareTag("Death")) continue;
+            if (collider.CompareTag("Player")) yield return null;
+            if (collider.CompareTag("MoveableObject"))
+            {
+                Destroy(collider.gameObject);
+                if (!Physics2D.OverlapCircle(transform.position + Vector3.right, 0.2f)) Instantiate(gameObject, transform.position + Vector3.right, Quaternion.identity);
+                if (!Physics2D.OverlapCircle(transform.position + Vector3.left, 0.2f)) Instantiate(gameObject, transform.position + Vector3.left, Quaternion.identity);
+                if (!Physics2D.OverlapCircle(transform.position + Vector3.up, 0.2f)) Instantiate(gameObject, transform.position + Vector3.up, Quaternion.identity);
+                if (!Physics2D.OverlapCircle(transform.position + Vector3.down, 0.2f)) Instantiate(gameObject, transform.position + Vector3.down, Quaternion.identity);
+                Destroy(gameObject);
 
+            }
+        }
+    }
     public bool CheckMovement(Vector2 dir)
     {
         bool canMove = false;

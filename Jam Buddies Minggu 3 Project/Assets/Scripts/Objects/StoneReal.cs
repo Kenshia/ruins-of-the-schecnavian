@@ -17,7 +17,7 @@ public class StoneReal : MonoBehaviour
     private void OnRealEvent()
     {
         transform.position = pos;
-        CheckOverlap(false);
+        //CheckOverlap(false);
     }
 
     public void CheckOverlap(bool calledFromOtherObject)
@@ -53,5 +53,6 @@ public class StoneReal : MonoBehaviour
     private void OnUnrealEvent()
     {
         pos = transform.position;
+        objectMovementScript.CheckCrushed();
     }
 }
