@@ -13,9 +13,13 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 dir;
     private float stepCd;
+    private bool skip;
+    [HideInInspector] public Vector3 nextPos, oldPos;
+    private Vector3 moveDir;
 
     private void Start()
     {
+        skip = false;
         transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), transform.position.z);
         stepCd = 0f;
         rb = GetComponent<Rigidbody2D>();
@@ -25,7 +29,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (PauseMenuScript.instance.isPaused || Time.timeScale == 0f) return;
+        if (PauseMenuScript.instance.isPaused || Time.timeScale == 0f || skip) return;
         NewMovement();
         //Anim();
         StepSound();
@@ -84,64 +88,34 @@ public class Player : MonoBehaviour
             dir.y = 1;
             anim.SetFloat("Vertical", 1);
             anim.SetFloat("Horizontal", 0);
-            if (anim.GetBool("Left") == true)
-            {
-                anim.SetBool("Left", false);
-            }
-            else
-            {
-                anim.SetBool("Left", true);
-            }
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
             dir.y = -1;
             anim.SetFloat("Vertical", -1);
             anim.SetFloat("Horizontal", 0);
-            if (anim.GetBool("Left") == true)
-            {
-                anim.SetBool("Left", false);
-            }
-            else
-            {
-                anim.SetBool("Left", true);
-            }
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
             dir.x = -1;
             anim.SetFloat("Horizontal", -1);
             anim.SetFloat("Vertical", 0);
-            if (anim.GetBool("Left") == true)
-            {
-                anim.SetBool("Left", false);
-            }
-            else
-            {
-                anim.SetBool("Left", true);
-            }
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             dir.x = 1;
             anim.SetFloat("Horizontal", 1);
             anim.SetFloat("Vertical", 0);
-            if (anim.GetBool("Left") == true)
-            {
-                anim.SetBool("Left", false);
-            }
-            else
-            {
-                anim.SetBool("Left", true);
-            }
         }
+
         if (dir == Vector2.zero) return;
+        else anim.SetBool("Left", !anim.GetBool("Left"));
 
         bool canMove = false;
         Collider2D[] collision = Physics2D.OverlapCircleAll((Vector2)transform.position + dir, 0.2f);
         if (collision.Length == 0)
         {
-            transform.position += (Vector3)dir;
+            Move();
             return;
         }
         foreach (Collider2D collider in collision)
@@ -151,22 +125,57 @@ public class Player : MonoBehaviour
                 canMove = collider.GetComponent<ObjectMovement>().CheckMovement(dir);
                 if (canMove)
                 {
-                    transform.position += (Vector3)dir;
+                    Move();
                     PushSound();
                 }
             }
             else if (collider.CompareTag("Objective"))
             {
-                transform.position += (Vector3)dir;
+                Move();
             }
             else if (collider.CompareTag("Door"))
             {
                 if (collider.GetComponent<DoorUnlocking>().CheckKey())
-                    transform.position += (Vector3)dir;
+                    Move();
             }
         }
     }
-    //transform.position += (Vector3) dir;
+
+    private void Move()
+    {
+        nextPos = transform.position + (Vector3)dir;
+        oldPos = transform.position;
+        StartCoroutine(IMove());
+    }
+    private IEnumerator IMove()
+    {
+        //with velocity
+        skip = true;
+        moveDir = (nextPos - oldPos);
+        rb.velocity = moveDir * 100f;
+        while (transform.position != nextPos)
+        {
+            Debug.Log(moveDir + " | " + rb.velocity + "  <- STILL IN LOOP");
+            yield return new WaitForSeconds(0.01f);
+        }
+        Debug.Log("END LOOP");
+        rb.velocity = Vector2.zero;
+        skip = false;
+
+
+        /*
+        // with transform
+        skip = true;
+        moveDir = (nextPos - transform.position) / 5;
+        while (transform.position != nextPos)
+        {
+            transform.position += moveDir;
+            yield return new WaitForSeconds(0.01f);
+        }
+        skip = false;
+        */
+    }
+
     private void Anim()
     {
         anim.SetFloat("Horizontal", dir.x);
@@ -221,7 +230,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.D)) dir.x--;      
         if (Input.GetKeyUp(KeyCode.A)) dir.x++;
 
-        rb.velocity = speed * dir;
+        //rb.velocity = speed * dir;
 
         anim.SetFloat("Horizontal", dir.x);
         anim.SetFloat("Vertical", dir.y);
