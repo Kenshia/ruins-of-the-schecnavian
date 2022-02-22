@@ -247,7 +247,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 7f1bb4fbe1f974d4e8964f46e6759421, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d10217535d4e0684691ede3f87346abc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -296,7 +296,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.24545455, y: 0.94545454}
+    oldSize: {x: 0.98734176, y: 0.9957806}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -320,5 +320,5 @@ MonoBehaviour:
   text: {fileID: 5467588363635146475}
   keyNeeded: 1
   sr: {fileID: 6008857514543003723}
-  real: {fileID: 21300000, guid: 7f1bb4fbe1f974d4e8964f46e6759421, type: 3}
+  real: {fileID: 21300000, guid: d10217535d4e0684691ede3f87346abc, type: 3}
   unreal: {fileID: 21300000, guid: 471b46577f3db3346979ad8a1f7b7ed5, type: 3}
