@@ -43,12 +43,14 @@ public class Player : MonoBehaviour
                 Time.timeScale = 0f;
                 DeathScreen.SetActive(true);
                 AudioManager.instance.PlayS("drown");
+                AudioManager.instance.PlayM("gameOver");
             }
             else
             {
                 Time.timeScale = 0f;
                 DeathScreen.SetActive(true);
                 AudioManager.instance.PlayS("crushed");
+                AudioManager.instance.PlayM("gameOver");
             }
         }
     }

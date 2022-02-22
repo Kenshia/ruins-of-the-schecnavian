@@ -54,7 +54,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: gameOver
     clip: {fileID: 8300000, guid: 66db7e3026019324bb27b68c2beb1ebb, type: 3}
-    volume: 1
+    volume: 0.15
     loop: 1
     source: {fileID: 0}
   - name: inGame
@@ -70,7 +70,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: unreal
     clip: {fileID: 8300000, guid: c25b04ffb4dc328488063b58ba2ab524, type: 3}
-    volume: 0.436
+    volume: 0.428
     loop: 1
     source: {fileID: 0}
   sfx:

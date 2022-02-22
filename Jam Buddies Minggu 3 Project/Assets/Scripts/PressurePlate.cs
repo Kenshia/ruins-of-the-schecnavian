@@ -6,9 +6,14 @@ public class PressurePlate : MonoBehaviour
 {
     private bool isActivated;
     public GameObject[] Gates;
+    public SpriteRenderer sr;
+    public Sprite real;
+    public Sprite unreal;
+    private bool realstate;
     private void Start()
     {
         isActivated = false;
+        realstate = true;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -29,6 +34,19 @@ public class PressurePlate : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+             if(realstate)
+            {
+                sr.sprite = unreal;
+                realstate = false;
+            }
+            else if(!realstate)
+            {
+                sr.sprite = real;
+                realstate = true;
+            }
+        }
         if (isActivated)
         {
             foreach (GameObject gate in Gates)

@@ -296,7 +296,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.34, y: 2.36}
+    oldSize: {x: 0.936, y: 0.944}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -319,3 +319,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 5467588363635146475}
   keyNeeded: 1
+  sr: {fileID: 6008857514543003723}
+  real: {fileID: 21300000, guid: 5ea422fe1f2b01449ae09dbd8e6cd34b, type: 3}
+  unreal: {fileID: 21300000, guid: 4847bb7de3fc97a4f8296d16a06ab4ea, type: 3}
