@@ -185,10 +185,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4158860382082931142, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
-      propertyPath: m_Constraints
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 4158860382082931163, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
       propertyPath: m_Name
       value: StoneUnreal (6)
@@ -257,10 +253,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4158860382082931142, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
-      propertyPath: m_Constraints
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 4158860382082931163, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
       propertyPath: m_Name
       value: StoneUnreal (3)
@@ -317,10 +309,6 @@ PrefabInstance:
     - target: {fileID: 4158860382082931140, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4158860382082931142, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
-      propertyPath: m_Constraints
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4158860382082931163, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
       propertyPath: m_Name
@@ -881,10 +869,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4158860382082931142, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
-      propertyPath: m_Constraints
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 4158860382082931163, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
       propertyPath: m_Name
       value: StoneUnreal (4)
@@ -963,10 +947,6 @@ PrefabInstance:
     - target: {fileID: 5386110865422729032, guid: 6c7cf1e584035974d8218132f273362d, type: 3}
       propertyPath: m_Name
       value: StoneReal (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386110865422729034, guid: 6c7cf1e584035974d8218132f273362d, type: 3}
-      propertyPath: m_Constraints
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5386110865422729036, guid: 6c7cf1e584035974d8218132f273362d, type: 3}
       propertyPath: m_RootOrder
@@ -1073,10 +1053,6 @@ PrefabInstance:
     - target: {fileID: 4158860382082931140, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4158860382082931142, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
-      propertyPath: m_Constraints
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4158860382082931163, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
       propertyPath: m_Name
@@ -1201,10 +1177,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4158860382082931142, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
-      propertyPath: m_Constraints
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 4158860382082931163, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
       propertyPath: m_Name
       value: StoneUnreal (5)
@@ -1221,10 +1193,6 @@ PrefabInstance:
     - target: {fileID: 5386110865422729032, guid: 6c7cf1e584035974d8218132f273362d, type: 3}
       propertyPath: m_Name
       value: StoneReal (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386110865422729034, guid: 6c7cf1e584035974d8218132f273362d, type: 3}
-      propertyPath: m_Constraints
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5386110865422729036, guid: 6c7cf1e584035974d8218132f273362d, type: 3}
       propertyPath: m_RootOrder
@@ -1326,10 +1294,6 @@ PrefabInstance:
     - target: {fileID: 4158860382082931140, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4158860382082931142, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
-      propertyPath: m_Constraints
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4158860382082931163, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
       propertyPath: m_Name
@@ -1508,10 +1472,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneReal (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5386110865422729034, guid: 6c7cf1e584035974d8218132f273362d, type: 3}
-      propertyPath: m_Constraints
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 5386110865422729036, guid: 6c7cf1e584035974d8218132f273362d, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -1582,10 +1542,6 @@ PrefabInstance:
     - target: {fileID: 5386110865422729032, guid: 6c7cf1e584035974d8218132f273362d, type: 3}
       propertyPath: m_Name
       value: StoneReal (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386110865422729034, guid: 6c7cf1e584035974d8218132f273362d, type: 3}
-      propertyPath: m_Constraints
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5386110865422729036, guid: 6c7cf1e584035974d8218132f273362d, type: 3}
       propertyPath: m_RootOrder
@@ -1704,10 +1660,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4158860382082931142, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
-      propertyPath: m_Constraints
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 4158860382082931163, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
       propertyPath: m_Name
       value: StoneUnreal (7)
@@ -1721,6 +1673,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100389827148047447, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 100389827148047450, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2052,10 +2008,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4158860382082931142, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
-      propertyPath: m_Constraints
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 4158860382082931163, guid: 69ac16ba9a91af1479b7c9908e923e28, type: 3}
       propertyPath: m_Name
       value: StoneUnreal
@@ -2202,10 +2154,6 @@ PrefabInstance:
     - target: {fileID: 5386110865422729032, guid: 6c7cf1e584035974d8218132f273362d, type: 3}
       propertyPath: m_Name
       value: StoneReal
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386110865422729034, guid: 6c7cf1e584035974d8218132f273362d, type: 3}
-      propertyPath: m_Constraints
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5386110865422729036, guid: 6c7cf1e584035974d8218132f273362d, type: 3}
       propertyPath: m_RootOrder

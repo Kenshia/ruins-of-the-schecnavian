@@ -6,9 +6,15 @@ public class ObjectMovement : MonoBehaviour
 {
     [HideInInspector] public List<Vector2> moveHistory;
     private int count;
+    Rigidbody2D rb;
+    Vector3 nextPos, dir, moveDir;
     private void Awake()
     {
         transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), transform.position.z);
+    }
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
     }
     public void CheckCrushed()
     {
@@ -36,15 +42,16 @@ public class ObjectMovement : MonoBehaviour
             }
         }
     }
-    public bool CheckMovement(Vector2 dir)
+    public bool CheckMovement(Vector2 v)
     {
+        dir = v;
         bool canMove = false;
-        Collider2D[] collision = Physics2D.OverlapCircleAll((Vector2)transform.position + dir, 0.2f);
+        Collider2D[] collision = Physics2D.OverlapCircleAll((Vector2)transform.position + (Vector2)dir, 0.2f);
         if (collision.Length == 0)
         {
-            SaveMovement();
-            transform.position += (Vector3)dir;
-            return true; ;
+            //transform.position += (Vector3)dir;
+            Move();
+            return true;
         }
         foreach (Collider2D collider in collision)
         {
@@ -53,29 +60,31 @@ public class ObjectMovement : MonoBehaviour
                 canMove = collider.GetComponent<ObjectMovement>().CheckMovement(dir);
                 if (canMove)
                 {
-                    SaveMovement();
-                    transform.position += (Vector3)dir;
+                    //transform.position += (Vector3)dir;
+                    Move();
                     return true;
                 }
             }
         }
         return false;
     }
-    private void SaveMovement()
+
+    private void Move()
     {
-        moveHistory.Add(transform.position);
-        count++;
+        nextPos = transform.position + (Vector3)dir;
+        StartCoroutine(IMove());
     }
-    public void DeleteMoveHistory()
+    private IEnumerator IMove()
     {
-        moveHistory.Clear();
-        count = 0;
+        //with velocity
+        moveDir = nextPos - transform.position;
+        rb.velocity = moveDir * 3f;
+        while (Mathf.Abs(nextPos.x - transform.position.x) > 0.1f || Mathf.Abs(nextPos.y - transform.position.y) > 0.1f)
+        {
+            yield return new WaitForSeconds(0.01f);
+        }
+        rb.velocity = Vector2.zero;
+        transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), transform.position.z);
     }
-    public Vector2 RefundMovement()
-    {
-        if (count == 0) return transform.position;
-        count--;
-        Vector2 pos = moveHistory[count];
-        return pos;
-    }
+
 }

@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
     {
         if (PauseMenuScript.instance.isPaused || Time.timeScale == 0f || skip) return;
         NewMovement();
-        //Anim();
         StepSound();
         if (Input.GetKeyDown(KeyCode.Space)) ToggleWorld();
     }
@@ -109,7 +108,7 @@ public class Player : MonoBehaviour
         }
 
         if (dir == Vector2.zero) return;
-        else anim.SetBool("Left", !anim.GetBool("Left"));
+        else StartCoroutine(Anim());
 
         bool canMove = false;
         Collider2D[] collision = Physics2D.OverlapCircleAll((Vector2)transform.position + dir, 0.2f);
@@ -144,43 +143,29 @@ public class Player : MonoBehaviour
     private void Move()
     {
         nextPos = transform.position + (Vector3)dir;
-        oldPos = transform.position;
         StartCoroutine(IMove());
     }
     private IEnumerator IMove()
     {
-        //with velocity
         skip = true;
-        moveDir = (nextPos - oldPos);
-        rb.velocity = moveDir * 100f;
-        while (transform.position != nextPos)
+        moveDir = nextPos - transform.position;
+        rb.velocity = moveDir * 3f;
+        while (Mathf.Abs(nextPos.x - transform.position.x) > 0.1f || Mathf.Abs(nextPos.y - transform.position.y) > 0.1f)
         {
-            Debug.Log(moveDir + " | " + rb.velocity + "  <- STILL IN LOOP");
             yield return new WaitForSeconds(0.01f);
         }
-        Debug.Log("END LOOP");
         rb.velocity = Vector2.zero;
+        transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), transform.position.z);
         skip = false;
-
-
-        /*
-        // with transform
-        skip = true;
-        moveDir = (nextPos - transform.position) / 5;
-        while (transform.position != nextPos)
-        {
-            transform.position += moveDir;
-            yield return new WaitForSeconds(0.01f);
-        }
-        skip = false;
-        */
     }
 
-    private void Anim()
+    private IEnumerator Anim()
     {
-        anim.SetFloat("Horizontal", dir.x);
-        anim.SetFloat("Vertical", dir.y);
-        anim.SetFloat("Speed", dir.sqrMagnitude);
+        anim.SetBool("Left", !anim.GetBool("Left"));
+        yield return new WaitForSeconds(0.15f);
+        anim.SetBool("Left", !anim.GetBool("Left"));
+        yield return new WaitForSeconds(0.15f);
+        anim.SetBool("Left", !anim.GetBool("Left"));
     }
 
     private void StepSound()
@@ -199,8 +184,13 @@ public class Player : MonoBehaviour
 
     private void PushSound()
     {
+        if (Random.Range(0, 100) < 50) return;
         switch (Random.Range(0, 4))
         {
+            case 0:
+                PushSound();
+                break;
+                //why? idk
             case 1:
                 AudioManager.instance.PlayS("push1");
                 break;
