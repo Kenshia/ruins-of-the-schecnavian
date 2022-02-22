@@ -2778,15 +2778,15 @@ MonoBehaviour:
     timeSpent: 0
   - level: 5
     timeSpent: 0
-  - level: 5
+  - level: 6
     timeSpent: 0
-  - level: 5
+  - level: 7
     timeSpent: 0
-  - level: 5
+  - level: 8
     timeSpent: 0
-  - level: 5
+  - level: 9
     timeSpent: 0
-  - level: 5
+  - level: 10
     timeSpent: 0
   levelText: {fileID: 118602523}
   timeText: {fileID: 1558399016}
@@ -5986,7 +5986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1654601660
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6502,6 +6502,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   master: {fileID: 1838613966}
+  bgm: {fileID: 0}
+  sfx: {fileID: 0}
 --- !u!1 &1867625459
 GameObject:
   m_ObjectHideFlags: 0

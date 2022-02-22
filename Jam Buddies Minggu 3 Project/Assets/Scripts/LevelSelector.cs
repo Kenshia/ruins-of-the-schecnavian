@@ -47,4 +47,8 @@ public class LevelSelector : MonoBehaviour
         public float timeSpent;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1)) SaveResult();
+    }
 }
