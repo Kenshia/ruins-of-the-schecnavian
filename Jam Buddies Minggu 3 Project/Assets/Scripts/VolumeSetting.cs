@@ -9,7 +9,7 @@ public class VolumeSetting : MonoBehaviour
     public Slider bgm;
     public Slider sfx;
 
-    private void Start()
+    private void Awake()
     {
         master.value = PlayerPrefs.GetFloat("masterVolume", 1f) * 100f;
         bgm.value = PlayerPrefs.GetFloat("musicVolume", 1f) * 100f;
