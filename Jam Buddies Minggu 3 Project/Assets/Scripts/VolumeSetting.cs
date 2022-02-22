@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class VolumeSetting : MonoBehaviour
 {
     public Slider master;
-    //public Slider music;
-    //public Slider sfx;
+    public Slider bgm;
+    public Slider sfx;
 
     private void Start()
     {
         master.value = PlayerPrefs.GetFloat("masterVolume", 1f) * 100f;
-        //music.value = PlayerPrefs.GetFloat("musicVolume", 1f) * 100f;
-        //sfx.value = PlayerPrefs.GetFloat("sfxVolume", 1f) * 100f;
+        bgm.value = PlayerPrefs.GetFloat("musicVolume", 1f) * 100f;
+        sfx.value = PlayerPrefs.GetFloat("sfxVolume", 1f) * 100f;
     }
 
     public void SetMasterVolume(float value)

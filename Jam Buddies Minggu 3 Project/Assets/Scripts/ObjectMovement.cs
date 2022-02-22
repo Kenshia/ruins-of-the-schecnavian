@@ -27,7 +27,6 @@ public class ObjectMovement : MonoBehaviour
             if (collider.CompareTag("Player")) yield return null;
             if (collider.CompareTag("MoveableObject"))
             {
-                Destroy(collider.gameObject);
                 if (!Physics2D.OverlapCircle(transform.position + Vector3.right, 0.2f)) Instantiate(gameObject, transform.position + Vector3.right, Quaternion.identity);
                 if (!Physics2D.OverlapCircle(transform.position + Vector3.left, 0.2f)) Instantiate(gameObject, transform.position + Vector3.left, Quaternion.identity);
                 if (!Physics2D.OverlapCircle(transform.position + Vector3.up, 0.2f)) Instantiate(gameObject, transform.position + Vector3.up, Quaternion.identity);
