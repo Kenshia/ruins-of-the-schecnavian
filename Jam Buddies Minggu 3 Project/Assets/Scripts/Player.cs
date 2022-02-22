@@ -108,7 +108,6 @@ public class Player : MonoBehaviour
         }
 
         if (dir == Vector2.zero) return;
-        else StartCoroutine(Anim());
 
         bool canMove = false;
         Collider2D[] collision = Physics2D.OverlapCircleAll((Vector2)transform.position + dir, 0.2f);
@@ -143,6 +142,7 @@ public class Player : MonoBehaviour
     private void Move()
     {
         nextPos = transform.position + (Vector3)dir;
+        StartCoroutine(Anim());
         StartCoroutine(IMove());
     }
     private IEnumerator IMove()
