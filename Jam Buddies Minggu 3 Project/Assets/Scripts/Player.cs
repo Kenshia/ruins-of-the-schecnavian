@@ -82,24 +82,56 @@ public class Player : MonoBehaviour
             dir.y = 1;
             anim.SetFloat("Vertical", 1);
             anim.SetFloat("Horizontal", 0);
-        }   
+            if (anim.GetBool("Left") == true)
+            {
+                anim.SetBool("Left", false);
+            }
+            else
+            {
+                anim.SetBool("Left", true);
+            }
+        }
         else if (Input.GetKeyDown(KeyCode.S))
         {
             dir.y = -1;
             anim.SetFloat("Vertical", -1);
             anim.SetFloat("Horizontal", 0);
+            if (anim.GetBool("Left") == true)
+            {
+                anim.SetBool("Left", false);
+            }
+            else
+            {
+                anim.SetBool("Left", true);
+            }
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
             dir.x = -1;
             anim.SetFloat("Horizontal", -1);
             anim.SetFloat("Vertical", 0);
-        } 
+            if (anim.GetBool("Left") == true)
+            {
+                anim.SetBool("Left", false);
+            }
+            else
+            {
+                anim.SetBool("Left", true);
+            }
+        }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             dir.x = 1;
             anim.SetFloat("Horizontal", 1);
             anim.SetFloat("Vertical", 0);
+            if (anim.GetBool("Left") == true)
+            {
+                anim.SetBool("Left", false);
+            }
+            else
+            {
+                anim.SetBool("Left", true);
+            }
         }
         if (dir == Vector2.zero) return;
 
@@ -132,7 +164,7 @@ public class Player : MonoBehaviour
             }
         }
     }
-
+    //transform.position += (Vector3) dir;
     private void Anim()
     {
         anim.SetFloat("Horizontal", dir.x);
