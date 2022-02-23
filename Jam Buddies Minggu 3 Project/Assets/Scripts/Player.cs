@@ -81,6 +81,7 @@ public class Player : MonoBehaviour
 
     private void NewMovement()
     {
+        bool thereIsKey = false;
         dir = Vector2.zero;
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -136,7 +137,12 @@ public class Player : MonoBehaviour
                 if (collider.GetComponent<DoorUnlocking>().CheckKey())
                     Move();
             }
+            else if (collider.CompareTag("Key"))
+            {
+                thereIsKey = true;
+            }
         }
+        if (thereIsKey) Move();
     }
 
     private void Move()

@@ -46,6 +46,7 @@ public class ObjectMovement : MonoBehaviour
     {
         dir = v;
         bool canMove = false;
+        bool thereIsKey = false;
         Collider2D[] collision = Physics2D.OverlapCircleAll((Vector2)transform.position + (Vector2)dir, 0.2f);
         if (collision.Length == 0)
         {
@@ -65,8 +66,18 @@ public class ObjectMovement : MonoBehaviour
                     return true;
                 }
             }
+            else if (collider.CompareTag("Key"))
+            {
+                thereIsKey = true;
+                continue;
+            }
         }
-        return false;
+        if (thereIsKey)
+        {
+            Move();
+            return true;
+        }
+        else return false;
     }
 
     private void Move()
