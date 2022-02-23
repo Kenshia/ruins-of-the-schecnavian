@@ -83,25 +83,25 @@ public class Player : MonoBehaviour
     {
         bool thereIsKey = false;
         dir = Vector2.zero;
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             dir.y = 1;
             anim.SetFloat("Vertical", 1);
             anim.SetFloat("Horizontal", 0);
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             dir.y = -1;
             anim.SetFloat("Vertical", -1);
             anim.SetFloat("Horizontal", 0);
         }
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             dir.x = -1;
             anim.SetFloat("Horizontal", -1);
             anim.SetFloat("Vertical", 0);
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             dir.x = 1;
             anim.SetFloat("Horizontal", 1);

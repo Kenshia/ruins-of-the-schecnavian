@@ -8,6 +8,10 @@ public class Water : MonoBehaviour
     private SpriteRenderer sr;
     private float timePerFrame;
     private int i;
+    private void Awake()
+    {
+        transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), transform.position.z);
+    }
     private void Start()
     {
         timePerFrame = 1f;
