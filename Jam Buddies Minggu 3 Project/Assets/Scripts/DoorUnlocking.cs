@@ -11,6 +11,12 @@ public class DoorUnlocking : MonoBehaviour
     public Sprite real;
     public Sprite unreal;
     private bool realstate;
+
+    private void Awake()
+    {
+        transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), transform.position.z);
+    }
+
     private void Start()
     {
         text.text = keyNeeded.ToString();
@@ -41,7 +47,7 @@ public class DoorUnlocking : MonoBehaviour
             KeyCounter.instance.keyCount -= keyNeeded;
             AudioManager.instance.PlayS("door");
             //ganti ke change sprite / whatever it is
-            Destroy(gameObject, 0.1f);
+            Destroy(gameObject);
             return true;
         }
         return false;
