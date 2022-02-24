@@ -10,7 +10,6 @@ public class DoorUnlocking : MonoBehaviour
     public SpriteRenderer sr;
     public Sprite real;
     public Sprite unreal;
-    private bool realstate;
 
     private void Awake()
     {
@@ -20,24 +19,8 @@ public class DoorUnlocking : MonoBehaviour
     private void Start()
     {
         text.text = keyNeeded.ToString();
-        realstate = true;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (realstate)
-            {
-                sr.sprite = unreal;
-                realstate = false;
-            }
-            else if (!realstate)
-            {
-                sr.sprite = real;
-                realstate = true;
-            }
-        }
+        Events.realWorld.AddListener(OnReal);
+        Events.unrealWorld.AddListener(OnUnreal);
     }
 
     public bool CheckKey()
@@ -51,5 +34,13 @@ public class DoorUnlocking : MonoBehaviour
             return true;
         }
         return false;
+    }
+    private void OnReal()
+    {
+        sr.sprite = real;
+    }
+    private void OnUnreal()
+    {
+        sr.sprite = unreal;
     }
 }

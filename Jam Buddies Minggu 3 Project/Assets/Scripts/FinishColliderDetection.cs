@@ -8,29 +8,29 @@ public class FinishColliderDetection : MonoBehaviour
     public SpriteRenderer sr;
     public Sprite real;
     public Sprite unreal;
-    private bool realstate;
+
+    private void Awake()
+    {
+        transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), transform.position.z);
+    }
+
     private void Start()
     {
-        realstate = true;
+        Events.realWorld.AddListener(OnReal);
+        Events.unrealWorld.AddListener(OnUnreal);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) finish.Complete();
     }
-    private void Update()
+
+    private void OnReal()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (realstate)
-            {
-                sr.sprite = unreal;
-                realstate = false;
-            }
-            else if (!realstate)
-            {
-                sr.sprite = real;
-                realstate = true;
-            }
-        }
+        sr.sprite = real;
+    }
+
+    private void OnUnreal()
+    {
+        sr.sprite = unreal;
     }
 }

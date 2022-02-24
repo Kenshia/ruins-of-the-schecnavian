@@ -52,7 +52,8 @@ MonoBehaviour:
   realWorld: {fileID: 0}
   unrealWorld: {fileID: 0}
   anim: {fileID: 206603583}
-  DeathScreen: {fileID: 0}
+  DeathScreenBatu: {fileID: 0}
+  DeathScreenTenggelem: {fileID: 0}
   nextPos: {x: 0, y: 0, z: 0}
   oldPos: {x: 0, y: 0, z: 0}
 --- !u!50 &100389827148047447
@@ -142,7 +143,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.49
+  m_Radius: 0.45
 --- !u!95 &206603583
 Animator:
   serializedVersion: 3
