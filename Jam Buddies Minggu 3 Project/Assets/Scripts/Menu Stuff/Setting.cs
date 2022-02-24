@@ -54,5 +54,9 @@ public class Setting : MonoBehaviour
         PlayerPrefs.SetFloat("sfxVolume", value / 100f);
         AudioManager.instance.SetVolume();
     }
-
+    public void ClearPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        Application.Quit();
+    }
 }

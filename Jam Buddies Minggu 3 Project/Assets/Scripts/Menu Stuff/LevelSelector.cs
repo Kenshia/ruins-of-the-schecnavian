@@ -10,6 +10,7 @@ public class LevelSelector : MonoBehaviour
     public LevelData[] levels;
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI timeText;
+    private int minute, second, milisecond;
 
     private void Start()
     {
@@ -19,8 +20,12 @@ public class LevelSelector : MonoBehaviour
     public void SelectLevel(int level)
     {
         int index = level - 1; //index for array
+        minute = (int)levels[index].timeSpent / 60;
+        second = (int)levels[index].timeSpent % 60;
+        milisecond = (int)(levels[index].timeSpent * 100) % 100;
         levelText.text = "Level: " + levels[index].level.ToString();
-        timeText.text = "Best Time: " + ((int)levels[index].timeSpent/60).ToString("00") + ":" + (levels[index].timeSpent%60).ToString("00") + (levels[index].timeSpent%1).ToString(".00");
+        //timeText.text = "Best Time: " + ((int)levels[index].timeSpent/60).ToString("00") + ":" + (((int)levels[index].timeSpent)%60).ToString("00") + (levels[index].timeSpent%1).ToString(".00");
+        timeText.text = "Best Time: " + minute.ToString("00") + ":" + second.ToString("00") + ":" + milisecond.ToString("00");
         select.input = index + 1; //level1 = build index 1
     }
 
