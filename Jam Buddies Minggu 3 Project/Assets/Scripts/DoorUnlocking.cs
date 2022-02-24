@@ -10,6 +10,7 @@ public class DoorUnlocking : MonoBehaviour
     public SpriteRenderer sr;
     public Sprite real;
     public Sprite unreal;
+    public GameObject keyNeededObject;
 
     private void Awake()
     {
@@ -21,8 +22,28 @@ public class DoorUnlocking : MonoBehaviour
         text.text = keyNeeded.ToString();
         Events.realWorld.AddListener(OnReal);
         Events.unrealWorld.AddListener(OnUnreal);
+        StartCoroutine(CheckPlayer());
     }
-
+    private IEnumerator CheckPlayer()
+    {
+        while (true)
+        {
+            bool nearPlayer = false;
+            Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, 1.5f);
+            foreach (Collider2D collider in collisions)
+            {
+                if (collider.CompareTag("Player")){
+                    nearPlayer = true;
+                    break;
+                }
+            }
+            if (nearPlayer)
+                keyNeededObject.SetActive(true);
+            else
+                keyNeededObject.SetActive(false);
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
     public bool CheckKey()
     {
         if (KeyCounter.instance.keyCount >= keyNeeded)

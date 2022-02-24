@@ -32,7 +32,6 @@ public class FinishAndTime : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(Time.timeScale);
         if (!aaaaa)
         {
             if (Input.anyKey)
