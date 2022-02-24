@@ -453,6 +453,14 @@ PrefabInstance:
       propertyPath: unrealWorld
       value: 
       objectReference: {fileID: 148034088}
+    - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
+      propertyPath: DeathScreenBatu
+      value: 
+      objectReference: {fileID: 557313951}
+    - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
+      propertyPath: DeathScreenTenggelem
+      value: 
+      objectReference: {fileID: 557313952}
     - target: {fileID: 100389827148047452, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -10307,6 +10315,11 @@ MonoBehaviour:
 --- !u!1 &557313951 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6557665673573712142, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+  m_PrefabInstance: {fileID: 557313946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &557313952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5892945380814826326, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
   m_PrefabInstance: {fileID: 557313946}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &565640301

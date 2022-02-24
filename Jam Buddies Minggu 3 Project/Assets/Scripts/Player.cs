@@ -9,7 +9,8 @@ public class Player : MonoBehaviour
     public GameObject realWorld;
     public GameObject unrealWorld;
     public Animator anim;
-    public GameObject DeathScreen;
+    public GameObject DeathScreenBatu;
+    public GameObject DeathScreenTenggelem;
     private Rigidbody2D rb;
     private Vector2 dir;
     private float stepCd;
@@ -44,14 +45,14 @@ public class Player : MonoBehaviour
             if (objectName.Equals("WaterDeathCheck"))
             {
                 Time.timeScale = 0f;
-                DeathScreen.SetActive(true);
+                DeathScreenTenggelem.SetActive(true);
                 AudioManager.instance.PlayS("drown");
                 AudioManager.instance.PlayM("gameOver");
             }
             else
             {
                 Time.timeScale = 0f;
-                DeathScreen.SetActive(true);
+                DeathScreenBatu.SetActive(true);
                 AudioManager.instance.PlayS("crushed");
                 AudioManager.instance.PlayM("gameOver");
             }
