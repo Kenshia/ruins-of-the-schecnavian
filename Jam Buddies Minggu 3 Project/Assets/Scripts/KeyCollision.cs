@@ -13,8 +13,7 @@ public class KeyCollision : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             AudioManager.instance.PlayS("key");
-            KeyCounter.instance.keyCount++;
-            Events.key.Invoke();
+            KeyCounter.instance.UpdateKey(1);
             KeyStaticInstance.keyStatic.PlayAt(transform.position);
             Destroy(gameObject);
         }

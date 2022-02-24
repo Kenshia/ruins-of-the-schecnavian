@@ -9784,7 +9784,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15dca67b21bd96945b7250f0f3d9ed26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelContainsKey: 1
   keyCount: 0
+  keyCountObject: {fileID: 557313953}
 --- !u!114 &317636323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10386,6 +10388,11 @@ GameObject:
 --- !u!1 &557313952 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5892945380814826326, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+  m_PrefabInstance: {fileID: 557313946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &557313953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3912279645556189252, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
   m_PrefabInstance: {fileID: 557313946}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &565640301

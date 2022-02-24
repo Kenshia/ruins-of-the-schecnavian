@@ -268,6 +268,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5892945380814826326, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
   m_PrefabInstance: {fileID: 15157603}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &15157610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3912279645556189252, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+  m_PrefabInstance: {fileID: 15157603}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &16525015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -598,6 +603,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4593441774179837923, guid: c458a51da994e6647bcbe224b12f26ae, type: 3}
   m_PrefabInstance: {fileID: 16525015}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &841649476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841649475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15dca67b21bd96945b7250f0f3d9ed26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelContainsKey: 0
+  keyCount: 0
+  keyCountObject: {fileID: 15157610}
 --- !u!114 &841649478
 MonoBehaviour:
   m_ObjectHideFlags: 0

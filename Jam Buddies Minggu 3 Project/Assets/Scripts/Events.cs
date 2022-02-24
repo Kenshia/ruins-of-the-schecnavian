@@ -7,14 +7,12 @@ public class Events : MonoBehaviour
 {
     public static UnityEvent realWorld;
     public static UnityEvent unrealWorld;
-    public static UnityEvent key;
     public Text currentWorld;
 
     private void Awake()
     {
         if (realWorld == null) realWorld = new UnityEvent();
         if (unrealWorld == null) unrealWorld = new UnityEvent();
-        if (key == null) key = new UnityEvent();
     }
 
     private void Start()
