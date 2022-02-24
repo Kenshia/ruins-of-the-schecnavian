@@ -44,14 +44,14 @@ public class Player : MonoBehaviour
 
             if (objectName.Equals("WaterDeathCheck"))
             {
-                Time.timeScale = 0f;
+                PauseMenuScript.instance.isPaused = true;
                 DeathScreenTenggelem.SetActive(true);
                 AudioManager.instance.PlayS("drown");
                 AudioManager.instance.PlayM("gameOver");
             }
             else
             {
-                Time.timeScale = 0f;
+                PauseMenuScript.instance.isPaused = true;
                 DeathScreenBatu.SetActive(true);
                 AudioManager.instance.PlayS("crushed");
                 AudioManager.instance.PlayM("gameOver");
@@ -68,7 +68,6 @@ public class Player : MonoBehaviour
             Events.unrealWorld.Invoke();
             realWorld.SetActive(false);
             unrealWorld.SetActive(true);
-            AudioManager.instance.PlayAmbiance("unreal");
         }
         else
         {
@@ -76,7 +75,6 @@ public class Player : MonoBehaviour
             Events.realWorld.Invoke();
             realWorld.SetActive(true);
             unrealWorld.SetActive(false);
-            AudioManager.instance.PlayAmbiance("real");
         }
     }
 
@@ -127,6 +125,10 @@ public class Player : MonoBehaviour
                 {
                     Move();
                     PushSound();
+                }
+                else
+                {
+                    break;
                 }
             }
             else if (collider.CompareTag("Objective"))

@@ -20,25 +20,26 @@ public class FinishAndTime : MonoBehaviour
         {
             aaaaa = false;
             textToDisplay.SetActive(true);
-            Time.timeScale = 0f;
+            PauseMenuScript.instance.isPaused = true;
         }
         else
         {
             aaaaa = true;
-            Time.timeScale = 1f;
+            PauseMenuScript.instance.isPaused = false;
         }
         finishScreen.SetActive(false);
         time = 0;
     }
     private void Update()
     {
+        Debug.Log(Time.timeScale);
         if (!aaaaa)
         {
             if (Input.anyKey)
             {
                 textToDisplay.SetActive(false);
                 aaaaa = true;
-                Time.timeScale = 1f;
+                PauseMenuScript.instance.isPaused = false;
             }
         }
     }
@@ -51,7 +52,7 @@ public class FinishAndTime : MonoBehaviour
 
     public void Complete()
     {
-        Time.timeScale = 0f;
+        PauseMenuScript.instance.isPaused = true;
         finishScreen.SetActive(true);
         FinishTimeText.text = "Time Spent : " + ((int)time / 60).ToString("00") + ":" + (time % 60).ToString("00");
         int idx = level - 1;

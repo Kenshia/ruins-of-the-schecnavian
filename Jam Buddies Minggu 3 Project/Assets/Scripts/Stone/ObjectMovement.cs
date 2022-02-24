@@ -65,6 +65,10 @@ public class ObjectMovement : MonoBehaviour
                     Move();
                     return true;
                 }
+                else
+                {
+                    return false;
+                }
             }
             else if (collider.CompareTag("Key"))
             {

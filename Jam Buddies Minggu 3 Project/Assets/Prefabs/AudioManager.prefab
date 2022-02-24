@@ -111,7 +111,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: drown
     clip: {fileID: 8300000, guid: a1b9ecc8c3fc43e45a86505ea7640681, type: 3}
-    volume: 1
+    volume: 0.758
     loop: 0
     source: {fileID: 0}
   - name: push1

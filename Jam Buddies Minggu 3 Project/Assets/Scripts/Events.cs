@@ -20,19 +20,28 @@ public class Events : MonoBehaviour
     private void Start()
     {
         AudioManager.instance.PlayM("inGame");
+        AudioManager.instance.PlayAmbiance("real");
         realWorld.AddListener(Real);
         unrealWorld.AddListener(Unreal);
 
-        realWorld.Invoke(); //start with real world
+        StartCoroutine(RealWorldInvoke()); //start with real world
+    }
+
+    private IEnumerator RealWorldInvoke()
+    {
+        yield return new WaitForSeconds(0.05f);
+        realWorld.Invoke();
     }
 
     private void Unreal()
     {
+        AudioManager.instance.PlayAmbiance("unreal");
         currentWorld.text = "IMAGINARY";
     }
 
     private void Real()
     {
+        AudioManager.instance.PlayAmbiance("real");
         currentWorld.text = "REAL";
     }
 }

@@ -46,12 +46,16 @@ public class PauseMenuScript : MonoBehaviour
     public void BackToMainMenu()
     {
         Resume();
+        AudioManager.instance.aSource.Stop();
+        AudioManager.instance.mSource.Stop();
         SceneManager.LoadScene(0);
     }
 
     public void RestartLevel()
     {
         Resume();
+        AudioManager.instance.aSource.Stop();
+        AudioManager.instance.mSource.Stop();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
