@@ -7,8 +7,11 @@ public class PauseMenuScript : MonoBehaviour
 {
     public static PauseMenuScript instance;
     public bool isPaused = false;
-    public GameObject PauseMenu;
+    public GameObject PauseMenu1;
+    public GameObject PauseMenu2;
+    public GameObject PauseMenu3;
     public GameObject settingMenu;
+    private GameObject ActivePauseMenu;
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -33,14 +36,35 @@ public class PauseMenuScript : MonoBehaviour
     public void Resume()
     {
         settingMenu.SetActive(false);
-        PauseMenu.SetActive(false);
+        ActivePauseMenu.SetActive(false);
         isPaused = false;
     }
 
     public void Pause()
     {
-        PauseMenu.SetActive(true);
-        isPaused = true;
+        switch (Random.Range(0, 3))
+        {
+            case 0:
+                ActivePauseMenu = PauseMenu1;
+                PauseMenu1.SetActive(true);
+                isPaused = true;
+                break;
+            case 1:
+                ActivePauseMenu = PauseMenu2;
+                PauseMenu2.SetActive(true);
+                isPaused = true;
+                break;
+            case 2:
+                ActivePauseMenu = PauseMenu3;
+                PauseMenu3.SetActive(true);
+                isPaused = true;
+                break;
+        }
+    }
+
+    public void EnableActivePauseMenu()
+    {
+        ActivePauseMenu.SetActive(true);
     }
 
     public void BackToMainMenu()
