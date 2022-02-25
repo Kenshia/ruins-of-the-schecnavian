@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public Animator anim;
     public GameObject DeathScreenBatu;
     public GameObject DeathScreenTenggelem;
+    public GameObject DeathScreenBatuUnreal;
     private Rigidbody2D rb;
     private Vector2 dir;
     private float stepCd;
@@ -49,13 +50,20 @@ public class Player : MonoBehaviour
                 AudioManager.instance.PlayS("drown");
                 AudioManager.instance.PlayM("gameOver");
             }
-            else
+            else if(objectName.Equals("StoneRealDeathCheck"))
             {
                 PauseMenuScript.instance.isPaused = true;
                 DeathScreenBatu.SetActive(true);
                 AudioManager.instance.PlayS("crushed");
                 AudioManager.instance.PlayM("gameOver");
             }
+            else if(objectName.Equals("StoneUnrealDeathCheck"))
+            {
+                PauseMenuScript.instance.isPaused = true;
+                DeathScreenBatuUnreal.SetActive(true);
+                AudioManager.instance.PlayS("crushed");
+                AudioManager.instance.PlayM("gameOver");
+            }    
         }
     }
 

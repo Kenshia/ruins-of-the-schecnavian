@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 5386110867154568168}
   - component: {fileID: 5386110867154568169}
   m_Layer: 0
-  m_Name: PlayerDeathCheck
+  m_Name: StoneRealDeathCheck
   m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

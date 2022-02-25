@@ -5282,6 +5282,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3912279645556189252, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
   m_PrefabInstance: {fileID: 1401571324}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1401571332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506744261850593910, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+  m_PrefabInstance: {fileID: 1401571324}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1401798050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33847,6 +33852,10 @@ PrefabInstance:
       propertyPath: DeathScreenTenggelem
       value: 
       objectReference: {fileID: 1401571330}
+    - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
+      propertyPath: DeathScreenBatuUnreal
+      value: 
+      objectReference: {fileID: 1401571332}
     - target: {fileID: 100389827148047452, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
       propertyPath: m_Name
       value: Player

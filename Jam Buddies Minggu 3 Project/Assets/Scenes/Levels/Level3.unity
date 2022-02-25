@@ -625,6 +625,10 @@ PrefabInstance:
       propertyPath: DeathScreenTenggelem
       value: 
       objectReference: {fileID: 1887307902}
+    - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
+      propertyPath: DeathScreenBatuUnreal
+      value: 
+      objectReference: {fileID: 1887307904}
     - target: {fileID: 100389827148047452, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -15897,11 +15901,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 326975847700915653, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1269525462755887941, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1534684293749784204, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -16031,6 +16035,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5363480106964951823, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6805063997689775162, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -16041,7 +16049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8036769320014921702, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9180503044655961888, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
       propertyPath: m_Name
@@ -16105,6 +16113,11 @@ GameObject:
 --- !u!1 &1887307903 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3912279645556189252, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+  m_PrefabInstance: {fileID: 1887307895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1887307904 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506744261850593910, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
   m_PrefabInstance: {fileID: 1887307895}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1979867739

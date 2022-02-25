@@ -15088,9 +15088,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 253478569074407408, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 326975847700915653, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1269525462755887941, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3915101303787659330, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
       propertyPath: m_Name
@@ -15204,9 +15212,13 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5363480106964951823, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8036769320014921702, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
@@ -15218,6 +15230,11 @@ GameObject:
 --- !u!1 &1287736025 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3912279645556189252, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+  m_PrefabInstance: {fileID: 1287736023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1287736026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506744261850593910, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
   m_PrefabInstance: {fileID: 1287736023}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1338540877 stripped
@@ -15435,6 +15452,10 @@ PrefabInstance:
       propertyPath: DeathScreenTenggelem
       value: 
       objectReference: {fileID: 1287736024}
+    - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
+      propertyPath: DeathScreenBatuUnreal
+      value: 
+      objectReference: {fileID: 1287736026}
     - target: {fileID: 100389827148047452, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
       propertyPath: m_Name
       value: Player

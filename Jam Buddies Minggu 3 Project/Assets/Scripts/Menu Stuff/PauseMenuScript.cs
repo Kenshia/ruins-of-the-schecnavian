@@ -16,6 +16,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         if (instance == null) instance = this;
         else Destroy(gameObject);
+        ActivePauseMenu = PauseMenu1;
     }
 
     void Update()
