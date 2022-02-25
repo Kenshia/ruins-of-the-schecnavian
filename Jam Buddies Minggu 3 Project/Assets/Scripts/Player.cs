@@ -181,11 +181,24 @@ public class Player : MonoBehaviour
 
     private IEnumerator Anim()
     {
-        anim.SetBool("Left", !anim.GetBool("Left"));
-        yield return new WaitForSeconds(0.15f);
-        anim.SetBool("Left", !anim.GetBool("Left"));
-        yield return new WaitForSeconds(0.15f);
-        anim.SetBool("Left", !anim.GetBool("Left"));
+        switch (Random.Range(0,3))
+        {
+            case 1:
+                anim.SetBool("Left", !anim.GetBool("Left"));
+                yield return new WaitForSeconds(0.15f);
+                anim.SetBool("Left", !anim.GetBool("Left"));
+                yield return new WaitForSeconds(0.15f);
+                anim.SetBool("Left", !anim.GetBool("Left"));
+                break;
+            case 2:
+                anim.SetBool("Left", !anim.GetBool("Left"));
+                yield return new WaitForSeconds(0.25f);
+                anim.SetBool("Left", !anim.GetBool("Left"));
+                break;
+            default:
+                StartCoroutine(Anim());
+                break;
+        }
     }
 
     private void StepSound()
@@ -209,13 +222,9 @@ public class Player : MonoBehaviour
 
     private void PushSound()
     {
-        if (Random.Range(0, 100) < 50) return;
+        if (Random.Range(0, 100) < 40) return;
         switch (Random.Range(0, 4))
         {
-            case 0:
-                PushSound();
-                break;
-                //why? idk
             case 1:
                 AudioManager.instance.PlayS("push1");
                 break;
@@ -226,7 +235,7 @@ public class Player : MonoBehaviour
                 AudioManager.instance.PlayS("push3");
                 break;
             default:
-                AudioManager.instance.PlayS("push1");
+                PushSound();
                 break;
         }
     }
