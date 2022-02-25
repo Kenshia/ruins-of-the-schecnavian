@@ -49,7 +49,7 @@ public class FinishAndTime : MonoBehaviour
 
     public void Complete()
     {
-        AudioManager.instance.PlayM("levelClear");
+        StartCoroutine(PlayLevelClear());
         AudioManager.instance.PlayS("levelClear");
         AudioManager.instance.aSource.Stop();
         PauseMenuScript.instance.isPaused = true;
@@ -63,5 +63,11 @@ public class FinishAndTime : MonoBehaviour
         }
         Debug.Log("completed");
         if (last != null) last.ShowText();
+    }
+
+    private IEnumerator PlayLevelClear()
+    {
+        yield return new WaitForSeconds(4f);
+        AudioManager.instance.PlayM("levelClear");
     }
 }

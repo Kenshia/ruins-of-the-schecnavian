@@ -63,7 +63,7 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: levelClear
-    clip: {fileID: 8300000, guid: 47eeb3b22232b7441acc307149021772, type: 3}
+    clip: {fileID: 8300000, guid: 56f94546fbcd35e41b8516e24040570e, type: 3}
     volume: 0.199
     loop: 1
     source: {fileID: 0}
@@ -79,19 +79,9 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   sfx:
-  - name: footstepDirt
-    clip: {fileID: 8300000, guid: b5811c45e665fe442acf0a417a0f5982, type: 3}
-    volume: 1
-    loop: 0
-    source: {fileID: 0}
   - name: toggleWorld
     clip: {fileID: 8300000, guid: 2a88b625615f22e409277fcdd7351c46, type: 3}
     volume: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: footstepStone
-    clip: {fileID: 8300000, guid: 5df4ddd0265174243a68ace6a8c7fd6c, type: 3}
-    volume: 0.83
     loop: 0
     source: {fileID: 0}
   - name: startLevel
@@ -181,6 +171,36 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: switch2
     clip: {fileID: 8300000, guid: 260394bbe4192924b8e8aa377ac8fb8f, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: footstep1
+    clip: {fileID: 8300000, guid: 0222e2a66503f4e409b6bf52034189e5, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: footstep2
+    clip: {fileID: 8300000, guid: a8106ee3de17867468fef025c0966f9b, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: footstep3
+    clip: {fileID: 8300000, guid: 0a2847c9bef763547b8c51481ee38252, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: footstep4
+    clip: {fileID: 8300000, guid: 0e54545e311111a4ba18042964ec70cf, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: footstep5
+    clip: {fileID: 8300000, guid: 84c03f551c20f9645b2e6e59c24153f3, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: footstep6
+    clip: {fileID: 8300000, guid: e4b092ca9d3237049baa1e8e0d0f6f54, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}

@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     public GameObject DeathScreenBatuUnreal;
     private Rigidbody2D rb;
     private Vector2 dir;
-    private float stepCd;
     private bool skip;
     [HideInInspector] public Vector3 nextPos, oldPos;
     private Vector3 moveDir;
@@ -23,7 +22,6 @@ public class Player : MonoBehaviour
     {
         skip = false;
         transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), transform.position.z);
-        stepCd = 0f;
         rb = GetComponent<Rigidbody2D>();
         realWorld.SetActive(true);
         unrealWorld.SetActive(false);
@@ -33,7 +31,6 @@ public class Player : MonoBehaviour
     {
         if (PauseMenuScript.instance.isPaused || Time.timeScale == 0f || skip) return;
         NewMovement();
-        StepSound();
         if (Input.GetKeyDown(KeyCode.Space)) ToggleWorld();
     }
 
@@ -48,23 +45,28 @@ public class Player : MonoBehaviour
                 PauseMenuScript.instance.isPaused = true;
                 DeathScreenTenggelem.SetActive(true);
                 AudioManager.instance.PlayS("drown");
-                AudioManager.instance.PlayM("gameOver");
+                StartCoroutine(PlayGameOver());
             }
             else if(objectName.Equals("StoneRealDeathCheck"))
             {
                 PauseMenuScript.instance.isPaused = true;
                 DeathScreenBatu.SetActive(true);
                 AudioManager.instance.PlayS("crushed");
-                AudioManager.instance.PlayM("gameOver");
+                StartCoroutine(PlayGameOver());
             }
             else if(objectName.Equals("StoneUnrealDeathCheck"))
             {
                 PauseMenuScript.instance.isPaused = true;
                 DeathScreenBatuUnreal.SetActive(true);
                 AudioManager.instance.PlayS("crushed");
-                AudioManager.instance.PlayM("gameOver");
+                StartCoroutine(PlayGameOver());
             }    
         }
+    }
+    private IEnumerator PlayGameOver()
+    {
+        yield return new WaitForSeconds(3.5f);
+        AudioManager.instance.PlayM("gameOver");
     }
 
     private void ToggleWorld()
@@ -158,6 +160,7 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
+        StepSound();
         nextPos = transform.position + (Vector3)dir;
         StartCoroutine(Anim());
         StartCoroutine(IMove());
@@ -187,15 +190,20 @@ public class Player : MonoBehaviour
 
     private void StepSound()
     {
-        if (stepCd <= 0)
+        switch (Random.Range(0,7))
         {
-            if (rb.velocity == Vector2.zero) return;
-            stepCd = 1f;
-            AudioManager.instance.PlayS("footstepStone");
-        }
-        else
-        {
-            stepCd -= Time.deltaTime;
+            case 1:
+                AudioManager.instance.PlayS("footstep1");
+                break;
+            case 4:
+                AudioManager.instance.PlayS("footstep4");
+                break;
+            case 6:
+                AudioManager.instance.PlayS("footstep6");
+                break;
+            default:
+                StepSound();
+                break;
         }
     }
 
@@ -220,38 +228,6 @@ public class Player : MonoBehaviour
             default:
                 AudioManager.instance.PlayS("push1");
                 break;
-        }
-    }
-
-    private void Movement()
-    {
-        //to prevent unwanted movement
-        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W)) dir = Vector2.zero;
-        if (Input.GetKeyDown(KeyCode.W)) dir.y++;        
-        if (Input.GetKeyDown(KeyCode.S)) dir.y--;        
-        if (Input.GetKeyDown(KeyCode.D)) dir.x++;
-        if (Input.GetKeyDown(KeyCode.A)) dir.x--;
-
-        if (Input.GetKeyUp(KeyCode.W)) dir.y--;
-        if (Input.GetKeyUp(KeyCode.S)) dir.y++;       
-        if (Input.GetKeyUp(KeyCode.D)) dir.x--;      
-        if (Input.GetKeyUp(KeyCode.A)) dir.x++;
-
-        //rb.velocity = speed * dir;
-
-        anim.SetFloat("Horizontal", dir.x);
-        anim.SetFloat("Vertical", dir.y);
-        anim.SetFloat("Speed", dir.sqrMagnitude);
-
-        if(stepCd <= 0)
-        {
-            if (rb.velocity == Vector2.zero) return;
-            stepCd = 1f;
-            AudioManager.instance.PlayS("footstepStone");
-        }
-        else
-        {
-            stepCd -= Time.deltaTime;
         }
     }
 }
