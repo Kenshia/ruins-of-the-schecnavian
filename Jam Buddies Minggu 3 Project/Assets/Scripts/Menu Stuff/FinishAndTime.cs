@@ -41,19 +41,20 @@ public class FinishAndTime : MonoBehaviour
                 PauseMenuScript.instance.isPaused = false;
             }
         }
-    }
-    private void FixedUpdate()
-    {
+        //time
         if (PauseMenuScript.instance.isPaused || !aaaaa) return;
         time += Time.deltaTime;
-        timeText.text = ((int)time / 60).ToString("00") + ":" + (time%60).ToString("00");
+        timeText.text = ((int)time / 60).ToString("00") + ":" + (time % 60).ToString("00");
     }
 
     public void Complete()
     {
+        AudioManager.instance.PlayM("levelClear");
+        AudioManager.instance.PlayS("levelClear");
+        AudioManager.instance.aSource.Stop();
         PauseMenuScript.instance.isPaused = true;
         finishScreen.SetActive(true);
-        FinishTimeText.text = "Time Spent : " + ((int)time / 60).ToString("00") + ":" + (time % 60).ToString("00");
+        FinishTimeText.text = "Time Spent\n" + ((int)time / 60).ToString("00") + ":" + (time % 60).ToString("00") + ":" + ((time*1000)%1000).ToString("000");
         int idx = level - 1;
         float best = PlayerPrefs.GetFloat("BestTime" + idx.ToString(), 0f);
         if(best == 0 || time < best)

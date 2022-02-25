@@ -21,7 +21,7 @@ public class FinishColliderDetection : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) finish.Complete();
+        if (collision.CompareTag("Player") && !PauseMenuScript.instance.isPaused) finish.Complete();
     }
 
     private void OnReal()

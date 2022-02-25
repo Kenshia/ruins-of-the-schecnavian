@@ -9,16 +9,17 @@ public class PressurePlate : MonoBehaviour
     public SpriteRenderer sr;
     public Sprite real;
     public Sprite unreal;
-    private bool realstate;
     private void Start()
     {
         isActivated = false;
-        realstate = true;
+        Events.realWorld.AddListener(OnReal);
+        Events.unrealWorld.AddListener(OnUnreal);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Stone")
         {
+            AudioManager.instance.PlayS("pressurePlate1");
             isActivated = true;
             Debug.Log("Activated");
         }
@@ -27,6 +28,7 @@ public class PressurePlate : MonoBehaviour
     {
         if (collision.gameObject.tag == "Stone")
         {
+            AudioManager.instance.PlayS("pressurePlate2");
             isActivated = false;
             Debug.Log("Deactivated");
         }
@@ -34,19 +36,6 @@ public class PressurePlate : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-             if(realstate)
-            {
-                sr.sprite = unreal;
-                realstate = false;
-            }
-            else if(!realstate)
-            {
-                sr.sprite = real;
-                realstate = true;
-            }
-        }
         if (isActivated)
         {
             foreach (GameObject gate in Gates)
@@ -61,5 +50,13 @@ public class PressurePlate : MonoBehaviour
                 gate.SetActive(true);
             }
         }
+    }
+private void OnReal()
+    {
+        sr.sprite = real;
+    }
+    private void OnUnreal()
+    {
+        sr.sprite = unreal;
     }
 }

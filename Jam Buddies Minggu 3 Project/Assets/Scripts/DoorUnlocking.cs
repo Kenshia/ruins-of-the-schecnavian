@@ -54,7 +54,11 @@ public class DoorUnlocking : MonoBehaviour
             Destroy(gameObject);
             return true;
         }
-        return false;
+        else
+        {
+            AudioManager.instance.PlayS("lockedDoor");
+            return false;
+        }
     }
     private void OnReal()
     {

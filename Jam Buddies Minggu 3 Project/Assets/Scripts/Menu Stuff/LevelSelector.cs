@@ -25,7 +25,7 @@ public class LevelSelector : MonoBehaviour
         milisecond = (int)(levels[index].timeSpent * 100) % 100;
         levelText.text = "Level: " + levels[index].level.ToString();
         //timeText.text = "Best Time: " + ((int)levels[index].timeSpent/60).ToString("00") + ":" + (((int)levels[index].timeSpent)%60).ToString("00") + (levels[index].timeSpent%1).ToString(".00");
-        timeText.text = "Best Time: " + minute.ToString("00") + ":" + second.ToString("00") + ":" + milisecond.ToString("00");
+        timeText.text = "Best Time: " + minute.ToString("00") + ":" + second.ToString("00") + ":" + milisecond.ToString("000");
         select.input = index + 1; //level1 = build index 1
     }
 

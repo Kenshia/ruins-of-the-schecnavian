@@ -62,6 +62,11 @@ MonoBehaviour:
     volume: 0.199
     loop: 1
     source: {fileID: 0}
+  - name: levelClear
+    clip: {fileID: 8300000, guid: 47eeb3b22232b7441acc307149021772, type: 3}
+    volume: 0.199
+    loop: 1
+    source: {fileID: 0}
   ambiance:
   - name: real
     clip: {fileID: 8300000, guid: 099c4b54cb5aa8d43812044fca33764e, type: 3}
@@ -80,7 +85,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: toggleWorld
-    clip: {fileID: 8300000, guid: 9428d7ebd4517e6489647accfa72465e, type: 3}
+    clip: {fileID: 8300000, guid: 2a88b625615f22e409277fcdd7351c46, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
@@ -136,6 +141,46 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: key
     clip: {fileID: 8300000, guid: 4f5f4a11a5e9e5642bb648956009a017, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: pressurePlate1
+    clip: {fileID: 8300000, guid: 6d9ef560a600db341aafdddef72a1848, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: gate1
+    clip: {fileID: 8300000, guid: 4f93cd490be3cfa4fa6e9668067826be, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: gate2
+    clip: {fileID: 8300000, guid: ec26191d3ee6d9b489c09337d5469cd2, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: levelClear
+    clip: {fileID: 8300000, guid: f324fbd20f63e8c41b651f7c3256b20d, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: lockedDoor
+    clip: {fileID: 8300000, guid: 6394da0d6fbc5ba46a0987904c1660d8, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: pressurePlate2
+    clip: {fileID: 8300000, guid: 06501d8fe0a8d664db853575ed50d37a, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: switch1
+    clip: {fileID: 8300000, guid: 75f0cbc54bdfb5d49aaaedfefbcc8b35, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: switch2
+    clip: {fileID: 8300000, guid: 260394bbe4192924b8e8aa377ac8fb8f, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}

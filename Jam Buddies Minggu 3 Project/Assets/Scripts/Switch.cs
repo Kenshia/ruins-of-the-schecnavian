@@ -21,20 +21,22 @@ public class Switch : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
-            if (Time.timeScale == 1f) 
-                if (Physics2D.OverlapCircle(transform.position, 0.8f, mask))
-                    ToggleSwitch();
+            if (PauseMenuScript.instance.isPaused) return; 
+            if (Physics2D.OverlapCircle(transform.position, 0.8f, mask))
+                ToggleSwitch();
     }
 
     private void ToggleSwitch()
     {
         if (isPressed)
         {
+            AudioManager.instance.PlayS("switch2");
             isPressed = false;
             sr.color = Color.white;
         }
         else
         {
+            AudioManager.instance.PlayS("switch1");
             isPressed = true;
             sr.color = Color.blue;
         }
