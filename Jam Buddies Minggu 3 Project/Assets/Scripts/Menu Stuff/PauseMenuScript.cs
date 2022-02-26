@@ -10,6 +10,7 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject PauseMenu1;
     public GameObject PauseMenu2;
     public GameObject PauseMenu3;
+    public GameObject PauseMenu4;
     public GameObject settingMenu;
     private GameObject ActivePauseMenu;
     private void Awake()
@@ -43,7 +44,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public void Pause()
     {
-        switch (Random.Range(0, 3))
+        switch (Random.Range(0, 4))
         {
             case 0:
                 ActivePauseMenu = PauseMenu1;
@@ -58,6 +59,11 @@ public class PauseMenuScript : MonoBehaviour
             case 2:
                 ActivePauseMenu = PauseMenu3;
                 PauseMenu3.SetActive(true);
+                isPaused = true;
+                break;
+            case 3:
+                ActivePauseMenu = PauseMenu4;
+                PauseMenu4.SetActive(true);
                 isPaused = true;
                 break;
         }
