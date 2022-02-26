@@ -54,6 +54,7 @@ public class Switch : MonoBehaviour
             sr.sprite = (isReal) ? realOn : unrealOn;
         }
         UpdateGates();
+        StartCoroutine( PlayGateSound() );
     }
 
     private void OnRealEvent()
@@ -79,5 +80,13 @@ public class Switch : MonoBehaviour
         {
             @object.SetActive(!isPressed);
         }
+    }
+
+    private IEnumerator PlayGateSound() {
+        yield return new WaitForSeconds(0.4f);
+        if (Random.Range(0, 100) < 50)
+            AudioManager.instance.PlayS("gate1");
+        else
+            AudioManager.instance.PlayS("gate2");
     }
 }

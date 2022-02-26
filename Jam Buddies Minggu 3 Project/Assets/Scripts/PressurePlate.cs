@@ -38,6 +38,7 @@ public class PressurePlate : MonoBehaviour
     }
     private void Activate()
     {
+        PlayGateSound();
         foreach (GameObject gate in Gates)
         {
             gate.SetActive(false);
@@ -45,6 +46,7 @@ public class PressurePlate : MonoBehaviour
     }
     private void Deactivate()
     {
+        PlayGateSound();
         foreach (GameObject gate in Gates)
         {
             gate.SetActive(true);
@@ -66,5 +68,13 @@ public class PressurePlate : MonoBehaviour
     private void OnUnreal()
     {
         sr.sprite = unreal;
+    }
+    private IEnumerator PlayGateSound()
+    {
+        yield return new WaitForSeconds(0.4f);
+        if (Random.Range(0, 100) < 50)
+            AudioManager.instance.PlayS("gate1");
+        else
+            AudioManager.instance.PlayS("gate2");
     }
 }
