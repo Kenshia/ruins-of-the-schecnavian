@@ -44,7 +44,7 @@ public class FinishAndTime : MonoBehaviour
         //time
         if (PauseMenuScript.instance.isPaused || !aaaaa) return;
         time += Time.deltaTime;
-        timeText.text = ((int)time / 60).ToString("00") + ":" + (time % 60).ToString("00");
+        timeText.text = ((int)time / 60).ToString("00") + " : " + (time % 60).ToString("00");
     }
 
     public void Complete()
@@ -54,7 +54,7 @@ public class FinishAndTime : MonoBehaviour
         AudioManager.instance.aSource.Stop();
         PauseMenuScript.instance.isPaused = true;
         finishScreen.SetActive(true);
-        FinishTimeText.text = "Time Spent\n" + ((int)time / 60).ToString("00") + ":" + (time % 60).ToString("00") + ":" + ((time*1000)%1000).ToString("000");
+        FinishTimeText.text = "Time Spent\n" + ((int)time / 60).ToString("00") + " : " + (time % 60).ToString("00") + " : " + ((time*1000)%1000).ToString("000");
         int idx = level - 1;
         float best = PlayerPrefs.GetFloat("BestTime" + idx.ToString(), 0f);
         if(best == 0 || time < best)
