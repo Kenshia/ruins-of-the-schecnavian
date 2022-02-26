@@ -2810,7 +2810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b243a418cf552b14e9741833e81b0a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 10
+  level: 11
 --- !u!222 &676147721
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4311,7 +4311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b243a418cf552b14e9741833e81b0a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 10
+  level: 12
 --- !u!222 &1009343163
 CanvasRenderer:
   m_ObjectHideFlags: 0
