@@ -4,54 +4,62 @@ using UnityEngine;
 
 public class PressurePlate : MonoBehaviour
 {
-    private bool isActivated;
     public GameObject[] Gates;
     public SpriteRenderer sr;
     public Sprite real;
     public Sprite unreal;
+    private void Awake()
+    {
+        transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), transform.position.z);
+    }
     private void Start()
     {
-        isActivated = false;
+        Deactivate();
         Events.realWorld.AddListener(OnReal);
         Events.unrealWorld.AddListener(OnUnreal);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Stone")
+        if(collision.CompareTag("MoveableObject"))
         {
             AudioManager.instance.PlayS("pressurePlate1");
-            isActivated = true;
+            Activate();
             Debug.Log("Activated");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Stone")
+        if (collision.CompareTag("MoveableObject"))
         {
             AudioManager.instance.PlayS("pressurePlate2");
-            isActivated = false;
+            Deactivate();
             Debug.Log("Deactivated");
         }
     }
-
-    private void Update()
+    private void Activate()
     {
-        if (isActivated)
+        foreach (GameObject gate in Gates)
         {
-            foreach (GameObject gate in Gates)
-            {
-                gate.SetActive(false);
-            }
+            gate.SetActive(false);
         }
-        else if (!isActivated)
+    }
+    private void Deactivate()
+    {
+        foreach (GameObject gate in Gates)
         {
-            foreach (GameObject gate in Gates)
+            gate.SetActive(true);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(gate.transform.position, 0.2f);
+            foreach (Collider2D collider in colliders)
             {
-                gate.SetActive(true);
+                if (collider.CompareTag("MoveableObject"))
+                {
+                    collider.GetComponent<ObjectMovement>().CheckCrushed();
+                    break;
+                }
             }
         }
     }
-private void OnReal()
+    private void OnReal()
     {
         sr.sprite = real;
     }

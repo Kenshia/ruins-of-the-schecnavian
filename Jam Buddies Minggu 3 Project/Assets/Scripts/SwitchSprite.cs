@@ -7,26 +7,27 @@ public class SwitchSprite : MonoBehaviour
     public SpriteRenderer sr;
     public Sprite real;
     public Sprite unreal;
-    private bool realstate;
+    public GameObject realDeathChecker;
+    public GameObject unrealDeathChecker;
+    private void Awake()
+    {
+        transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), transform.position.z);
+    }
     private void Start()
     {
-        realstate = true;
+        Events.realWorld.AddListener(OnReal);
+        Events.unrealWorld.AddListener(OnUnreal);
     }
-
-    private void Update()
+    private void OnReal()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (realstate)
-            {
-                sr.sprite = unreal;
-                realstate = false;
-            }
-            else if (!realstate)
-            {
-                sr.sprite = real;
-                realstate = true;
-            }
-        }
+        sr.sprite = real;
+        realDeathChecker.SetActive(true);
+        unrealDeathChecker.SetActive(false);
+    }
+    private void OnUnreal()
+    {
+        sr.sprite = unreal;
+        realDeathChecker.SetActive(false);
+        unrealDeathChecker.SetActive(true);
     }
 }

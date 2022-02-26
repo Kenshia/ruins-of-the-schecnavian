@@ -31,7 +31,7 @@ public class ObjectMovement : MonoBehaviour
         {
             if (collider.gameObject == this.gameObject || collider.CompareTag("Death")) continue;
             if (collider.CompareTag("Player")) yield return null;
-            if (collider.CompareTag("MoveableObject"))
+            if (collider.CompareTag("MoveableObject") || collider.CompareTag("Gate"))
             {
                 if (!Physics2D.OverlapCircle(transform.position + Vector3.right, 0.2f)) Instantiate(gameObject, transform.position + Vector3.right, Quaternion.identity);
                 if (!Physics2D.OverlapCircle(transform.position + Vector3.left, 0.2f)) Instantiate(gameObject, transform.position + Vector3.left, Quaternion.identity);

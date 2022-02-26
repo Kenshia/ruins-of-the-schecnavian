@@ -10,6 +10,7 @@ TagManager:
   - Obstacle
   - Door
   - Key
+  - Gate
   layers:
   - Default
   - TransparentFX

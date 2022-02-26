@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour
 {
+    public GameObject[] gate;
     public bool isPressed;
     public LayerMask mask;
-    private bool hidden;
+    public Sprite realOn;
+    public Sprite realOff;
+    public Sprite unrealOn;
+    public Sprite unrealOff;
+    private bool oldPressed;
+    private bool isReal;
     private SpriteRenderer sr;
-
+    private void Awake()
+    {
+        transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), transform.position.z);
+    }
     private void Start()
     {
+        isReal = true;
         sr = GetComponent<SpriteRenderer>();
         isPressed = false;
-        hidden = isPressed;
+        oldPressed = isPressed;
         Events.realWorld.AddListener(OnRealEvent);
         Events.unrealWorld.AddListener(OnUnrealEvent);
     }
@@ -21,9 +31,11 @@ public class Switch : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
+        {
             if (PauseMenuScript.instance.isPaused) return; 
-            if (Physics2D.OverlapCircle(transform.position, 0.8f, mask))
+            if (Physics2D.OverlapCircle(transform.position, 0.2f, mask))
                 ToggleSwitch();
+        }
     }
 
     private void ToggleSwitch()
@@ -32,29 +44,42 @@ public class Switch : MonoBehaviour
         {
             AudioManager.instance.PlayS("switch2");
             isPressed = false;
-            sr.color = Color.white;
+            sr.sprite = (isReal) ? realOff : unrealOff;
         }
         else
         {
             AudioManager.instance.PlayS("switch1");
             isPressed = true;
-            sr.color = Color.blue;
+            sr.sprite = (isReal) ? realOn : unrealOn;
         }
+        UpdateGates();
     }
 
     private void OnRealEvent()
     {
-        if (hidden == isPressed) return;
-
-        ToggleSwitch();
-        hidden = isPressed;
+        bool temp = isPressed;
+        isPressed = oldPressed;
+        oldPressed = temp;
+        isReal = true;
+        sr.sprite = (isPressed) ? realOn : realOff;
+        UpdateGates();
     }
 
     private void OnUnrealEvent()
     {
-        if (hidden == isPressed) return;
+        bool temp = isPressed;
+        isPressed = oldPressed;
+        oldPressed = temp;
+        isReal = false;
+        sr.sprite = (isPressed) ? unrealOn : unrealOff;
+        UpdateGates();
+    }
 
-        ToggleSwitch();
-        hidden = isPressed;
+    private void UpdateGates()
+    {
+        foreach (GameObject @object in gate)
+        {
+            @object.SetActive(!isPressed);
+        }
     }
 }
