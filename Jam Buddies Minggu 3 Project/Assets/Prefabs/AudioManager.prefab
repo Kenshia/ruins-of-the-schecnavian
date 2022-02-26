@@ -204,6 +204,26 @@ MonoBehaviour:
     volume: 1
     loop: 0
     source: {fileID: 0}
+  - name: pop
+    clip: {fileID: 8300000, guid: 240369ee061920f449a9e45360f6ad73, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: miniPop
+    clip: {fileID: 8300000, guid: 240369ee061920f449a9e45360f6ad73, type: 3}
+    volume: 0.3
+    loop: 0
+    source: {fileID: 0}
+  - name: writing1
+    clip: {fileID: 8300000, guid: 2567f58d39581f343bb3c684b0d444b5, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: writing2
+    clip: {fileID: 8300000, guid: 253d9d9c1cb0c1945b8e188cee5144b4, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
   mSource: {fileID: 7046852296175553704}
   sSource: {fileID: 7046852296175553705}
   aSource: {fileID: 5684993954168524991}

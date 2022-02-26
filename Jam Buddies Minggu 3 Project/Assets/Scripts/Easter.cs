@@ -14,10 +14,16 @@ public class Easter : MonoBehaviour
 
     public void Pressed()
     {
-        timesToPress--;
-        if (timesToPress <= 0)
+        if(timesToPress > 0)
         {
+            timesToPress--;
+            if(timesToPress != 0) AudioManager.instance.PlayS("miniPop");
+        }
+        if (timesToPress == 0)
+        {
+            timesToPress = -1;
             objectToShow.SetActive(true);
+            AudioManager.instance.PlayS("pop");
         }
     }
 }
