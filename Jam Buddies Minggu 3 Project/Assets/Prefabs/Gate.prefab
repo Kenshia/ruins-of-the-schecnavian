@@ -31,7 +31,6 @@ Transform:
   m_LocalScale: {x: 0.94188833, y: 0.9422938, z: 1}
   m_Children:
   - {fileID: 935626248757722483}
-  - {fileID: 3718867970373788072}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -127,87 +126,6 @@ MonoBehaviour:
   sr: {fileID: 5164318156970852989}
   real: {fileID: 21300000, guid: 48ac423b647419a4fa8216dbae36130d, type: 3}
   unreal: {fileID: 21300000, guid: 6b5d1ba06a1f7c0449ebec3520ff07b2, type: 3}
-  realDeathChecker: {fileID: 7208914457767222759}
-  unrealDeathChecker: {fileID: 3117599145038987954}
---- !u!1 &3117599145038987954
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3718867970373788072}
-  - component: {fileID: 17394338280376169}
-  - component: {fileID: 2960196726632314838}
-  m_Layer: 0
-  m_Name: StoneUnrealDeathCheck
-  m_TagString: Death
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3718867970373788072
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3117599145038987954}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2553476755228298528}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &17394338280376169
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3117599145038987954}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
---- !u!61 &2960196726632314838
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3117599145038987954}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.4}
-  m_EdgeRadius: 0
 --- !u!1 &7208914457767222759
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +138,7 @@ GameObject:
   - component: {fileID: 767495640878325294}
   - component: {fileID: 9024813425301094031}
   m_Layer: 0
-  m_Name: StoneRealDeathCheck
+  m_Name: GateDeath
   m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

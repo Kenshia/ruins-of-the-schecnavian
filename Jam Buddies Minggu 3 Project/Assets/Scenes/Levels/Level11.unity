@@ -259,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1269525462755887941, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3915101303787659330, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
       propertyPath: m_Name
@@ -377,7 +377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5363480106964951823, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8036769320014921702, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
       propertyPath: m_RootOrder
@@ -450,6 +450,11 @@ GameObject:
 --- !u!1 &72099805 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1506744261850593910, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+  m_PrefabInstance: {fileID: 72099796}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &72099806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3583503975547235294, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
   m_PrefabInstance: {fileID: 72099796}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &111507631
@@ -44143,6 +44148,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 72099801}
     - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
+      propertyPath: DeathScreenGate
+      value: 
+      objectReference: {fileID: 72099806}
+    - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
       propertyPath: DeathScreenTenggelem
       value: 
       objectReference: {fileID: 72099803}
@@ -44910,12 +44919,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4593441774179837922, guid: c458a51da994e6647bcbe224b12f26ae, type: 3}
-      propertyPath: last
-      value: 
-      objectReference: {fileID: 1948893303}
-    - target: {fileID: 4593441774179837922, guid: c458a51da994e6647bcbe224b12f26ae, type: 3}
       propertyPath: level
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4593441774179837922, guid: c458a51da994e6647bcbe224b12f26ae, type: 3}
       propertyPath: timeText
@@ -44979,19 +44984,6 @@ MonoBehaviour:
   levelContainsKey: 1
   keyCount: 0
   keyCountObject: {fileID: 72099804}
---- !u!114 &1948893303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948893300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84ac0008ab6ae2245a1a351ccc9695c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textToShow: {fileID: 2078995617}
 --- !u!1 &2026522696
 GameObject:
   m_ObjectHideFlags: 0

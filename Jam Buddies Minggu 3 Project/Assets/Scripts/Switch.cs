@@ -32,7 +32,8 @@ public class Switch : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (PauseMenuScript.instance.isPaused) return; 
+            if (PauseMenuScript.instance.isPaused) return;
+            if (!isReal) return;
             if (Physics2D.OverlapCircle(transform.position, 0.2f, mask))
                 ToggleSwitch();
         }
@@ -57,9 +58,7 @@ public class Switch : MonoBehaviour
 
     private void OnRealEvent()
     {
-        bool temp = isPressed;
         isPressed = oldPressed;
-        oldPressed = temp;
         isReal = true;
         sr.sprite = (isPressed) ? realOn : realOff;
         UpdateGates();
@@ -67,9 +66,8 @@ public class Switch : MonoBehaviour
 
     private void OnUnrealEvent()
     {
-        bool temp = isPressed;
-        isPressed = oldPressed;
-        oldPressed = temp;
+        oldPressed = isPressed;
+        isPressed = !isPressed;
         isReal = false;
         sr.sprite = (isPressed) ? unrealOn : unrealOff;
         UpdateGates();

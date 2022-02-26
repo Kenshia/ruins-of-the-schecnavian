@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public Animator anim;
     public GameObject DeathScreenBatu;
     public GameObject DeathScreenTenggelem;
+    public GameObject DeathScreenGate;
     public GameObject DeathScreenBatuUnreal;
     private Rigidbody2D rb;
     private Vector2 dir;
@@ -61,6 +62,13 @@ public class Player : MonoBehaviour
                 AudioManager.instance.PlayS("crushed");
                 StartCoroutine(PlayGameOver());
             }    
+            else if (objectName.Equals("GateDeath"))
+            {
+                PauseMenuScript.instance.isPaused = true;
+                DeathScreenGate.SetActive(true);
+                AudioManager.instance.PlayS("crushed");
+                StartCoroutine(PlayGameOver());
+            }
         }
     }
     private IEnumerator PlayGameOver()

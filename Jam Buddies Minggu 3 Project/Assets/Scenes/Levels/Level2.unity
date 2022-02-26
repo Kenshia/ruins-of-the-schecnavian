@@ -278,6 +278,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1506744261850593910, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
   m_PrefabInstance: {fileID: 15157603}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &15157612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3583503975547235294, guid: 283ee503b43238a4f801c72b873e37cc, type: 3}
+  m_PrefabInstance: {fileID: 15157603}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &16525015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -778,6 +783,10 @@ PrefabInstance:
       propertyPath: DeathScreenBatu
       value: 
       objectReference: {fileID: 15157608}
+    - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
+      propertyPath: DeathScreenGate
+      value: 
+      objectReference: {fileID: 15157612}
     - target: {fileID: 100389827148047451, guid: 2877fdde6f57f9945b280182fbb9190e, type: 3}
       propertyPath: DeathScreenTenggelem
       value: 
