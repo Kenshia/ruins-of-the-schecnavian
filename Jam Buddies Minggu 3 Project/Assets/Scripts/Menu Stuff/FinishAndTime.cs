@@ -67,7 +67,7 @@ public class FinishAndTime : MonoBehaviour
 
     private IEnumerator PlayLevelClear()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         AudioManager.instance.PlayM("levelClear");
     }
 }

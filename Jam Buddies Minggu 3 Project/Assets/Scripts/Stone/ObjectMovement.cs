@@ -22,7 +22,7 @@ public class ObjectMovement : MonoBehaviour
     }
     public IEnumerator CoroutineCheckCrushed()
     {
-        yield return new WaitForSeconds(0.025f);
+        yield return new WaitForSeconds(0.01f);
         /*
          * if crushed, delete crushed, multiply current to all 4 sides except if the place has objective, and obstacle
          */
@@ -33,10 +33,10 @@ public class ObjectMovement : MonoBehaviour
             if (collider.CompareTag("Player")) yield return null;
             if (collider.CompareTag("MoveableObject") || collider.CompareTag("Gate") || collider.CompareTag("Obstacle"))
             {
-                if (!Physics2D.OverlapCircle(transform.position + Vector3.right, 0.2f)) Instantiate(gameObject, transform.position + Vector3.right, Quaternion.identity);
-                if (!Physics2D.OverlapCircle(transform.position + Vector3.left, 0.2f)) Instantiate(gameObject, transform.position + Vector3.left, Quaternion.identity);
-                if (!Physics2D.OverlapCircle(transform.position + Vector3.up, 0.2f)) Instantiate(gameObject, transform.position + Vector3.up, Quaternion.identity);
-                if (!Physics2D.OverlapCircle(transform.position + Vector3.down, 0.2f)) Instantiate(gameObject, transform.position + Vector3.down, Quaternion.identity);
+                if (!Physics2D.OverlapCircle(transform.position + Vector3.right, 0.4f)) Instantiate(gameObject, transform.position + Vector3.right, Quaternion.identity);
+                if (!Physics2D.OverlapCircle(transform.position + Vector3.left, 0.4f)) Instantiate(gameObject, transform.position + Vector3.left, Quaternion.identity);
+                if (!Physics2D.OverlapCircle(transform.position + Vector3.up, 0.4f)) Instantiate(gameObject, transform.position + Vector3.up, Quaternion.identity);
+                if (!Physics2D.OverlapCircle(transform.position + Vector3.down, 0.4f)) Instantiate(gameObject, transform.position + Vector3.down, Quaternion.identity);
                 Destroy(gameObject);
 
             }
@@ -89,13 +89,17 @@ public class ObjectMovement : MonoBehaviour
         nextPos = transform.position + (Vector3)dir;
         StartCoroutine(IMove());
     }
+    float movementTime;
     private IEnumerator IMove()
     {
+        movementTime = 0f;
         //with velocity
         moveDir = nextPos - transform.position;
         rb.velocity = moveDir * 3f;
         while (Mathf.Abs(nextPos.x - transform.position.x) > 0.1f || Mathf.Abs(nextPos.y - transform.position.y) > 0.1f)
         {
+            movementTime += Time.deltaTime;
+            if (movementTime > 1.5f) break;
             yield return new WaitForSeconds(0.01f);
         }
         rb.velocity = Vector2.zero;

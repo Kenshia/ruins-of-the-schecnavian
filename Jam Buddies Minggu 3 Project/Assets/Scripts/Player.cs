@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
     }
     private IEnumerator PlayGameOver()
     {
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(1.7f);
         AudioManager.instance.PlayM("gameOver");
     }
 
@@ -173,13 +173,17 @@ public class Player : MonoBehaviour
         StartCoroutine(Anim());
         StartCoroutine(IMove());
     }
+    float movementTime;
     private IEnumerator IMove()
     {
+        movementTime = 0f;
         skip = true;
         moveDir = nextPos - transform.position;
         rb.velocity = moveDir * 3f;
         while (Mathf.Abs(nextPos.x - transform.position.x) > 0.1f || Mathf.Abs(nextPos.y - transform.position.y) > 0.1f)
         {
+            movementTime += Time.deltaTime;
+            if (movementTime > 1.5f) break;
             yield return new WaitForSeconds(0.01f);
         }
         rb.velocity = Vector2.zero;

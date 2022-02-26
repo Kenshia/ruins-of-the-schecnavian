@@ -150,7 +150,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: levelClear
-    clip: {fileID: 8300000, guid: f324fbd20f63e8c41b651f7c3256b20d, type: 3}
+    clip: {fileID: 8300000, guid: dabfa70308a68404a809d2cd4fde53cd, type: 3}
     volume: 1
     loop: 0
     source: {fileID: 0}
