@@ -22,7 +22,7 @@ public class ObjectMovement : MonoBehaviour
     }
     public IEnumerator CoroutineCheckCrushed()
     {
-        yield return new WaitForSeconds(0.02f);
+        yield return new WaitForSeconds(0.025f);
         /*
          * if crushed, delete crushed, multiply current to all 4 sides except if the place has objective, and obstacle
          */
@@ -31,7 +31,7 @@ public class ObjectMovement : MonoBehaviour
         {
             if (collider.gameObject == this.gameObject || collider.CompareTag("Death")) continue;
             if (collider.CompareTag("Player")) yield return null;
-            if (collider.CompareTag("MoveableObject") || collider.CompareTag("Gate"))
+            if (collider.CompareTag("MoveableObject") || collider.CompareTag("Gate") || collider.CompareTag("Obstacle"))
             {
                 if (!Physics2D.OverlapCircle(transform.position + Vector3.right, 0.2f)) Instantiate(gameObject, transform.position + Vector3.right, Quaternion.identity);
                 if (!Physics2D.OverlapCircle(transform.position + Vector3.left, 0.2f)) Instantiate(gameObject, transform.position + Vector3.left, Quaternion.identity);

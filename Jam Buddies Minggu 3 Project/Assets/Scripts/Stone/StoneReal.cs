@@ -17,6 +17,7 @@ public class StoneReal : MonoBehaviour
     private void OnRealEvent()
     {
         transform.position = pos;
+        objectMovementScript.CheckCrushed();
     }
 
     private void OnUnrealEvent()

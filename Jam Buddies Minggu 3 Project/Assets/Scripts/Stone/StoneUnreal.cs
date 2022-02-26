@@ -22,5 +22,6 @@ public class StoneUnreal : MonoBehaviour
     private void OnUnrealEvent()
     {
         transform.position = pos;
+        objectMovementScript.CheckCrushed();
     }
 }
