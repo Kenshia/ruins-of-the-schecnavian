@@ -11,6 +11,7 @@ public class Switch : MonoBehaviour
     public Sprite realOff;
     public Sprite unrealOn;
     public Sprite unrealOff;
+    public GameObject pressEText;
     private bool oldPressed;
     private bool isReal;
     private SpriteRenderer sr;
@@ -20,12 +21,14 @@ public class Switch : MonoBehaviour
     }
     private void Start()
     {
+        pressEText.SetActive(false);
         isReal = true;
         sr = GetComponent<SpriteRenderer>();
         isPressed = false;
         oldPressed = isPressed;
         Events.realWorld.AddListener(OnRealEvent);
         Events.unrealWorld.AddListener(OnUnrealEvent);
+        StartCoroutine(CheckPlayerForText());
     }
 
     private void Update()
@@ -38,7 +41,30 @@ public class Switch : MonoBehaviour
                 ToggleSwitch();
         }
     }
-
+    private IEnumerator CheckPlayerForText()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.3f);
+            if (isReal)
+            {
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.3f);
+                foreach (Collider2D col in colliders)
+                {
+                    if (col.CompareTag("Player"))
+                    {
+                        pressEText.SetActive(true);
+                        break;
+                    }
+                    pressEText.SetActive(false);
+                }
+            }
+            else
+            {
+                pressEText.SetActive(false);
+            }
+        }
+    }
     private void ToggleSwitch()
     {
         if (isPressed)
