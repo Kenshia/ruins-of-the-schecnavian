@@ -15,6 +15,7 @@ public class LASTSCRIPT : MonoBehaviour
     {
         a = true;
         textToShow.SetActive(true);
+        Debug.Log("ShowText called");
     }
 
     private void Update()

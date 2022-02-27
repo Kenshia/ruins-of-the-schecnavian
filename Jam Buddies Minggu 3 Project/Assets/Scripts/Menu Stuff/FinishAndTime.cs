@@ -52,9 +52,10 @@ public class FinishAndTime : MonoBehaviour
         StartCoroutine(PlayLevelClear());
         AudioManager.instance.PlayS("levelClear");
         AudioManager.instance.aSource.Stop();
+        if (last != null) last.ShowText();
         PauseMenuScript.instance.isPaused = true;
         finishScreen.SetActive(true);
-        FinishTimeText.text = "Time Spent\n" + ((int)time / 60).ToString("00") + " : " + (time % 60).ToString("00") + " : " + ((time*1000)%1000).ToString("000");
+        FinishTimeText.text = ((int)time / 60).ToString("00") + " : " + (time % 60).ToString("00") + " : " + ((time*1000)%1000).ToString("000");
         int idx = level - 1;
         float best = PlayerPrefs.GetFloat("BestTime" + idx.ToString(), 0f);
         if(best == 0 || time < best)
@@ -62,7 +63,7 @@ public class FinishAndTime : MonoBehaviour
             PlayerPrefs.SetFloat("BestTime" + idx.ToString(), time);
         }
         Debug.Log("completed");
-        if (last != null) last.ShowText();
+        //if (last != null) last.ShowText();
     }
 
     private IEnumerator PlayLevelClear()
